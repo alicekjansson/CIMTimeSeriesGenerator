@@ -6,7 +6,7 @@
 - Kolla upp om vår licens till PowerFactory så småningom kan utvidgas till att arbeta med CIm-format
 
 
-# Ursprungligt förslag: 
+## Ursprungligt förslag: 
 Lastprofilsgenerator som efter användarens specifikationer skapar tidsserier kopplade till en nätmodell i CIM.
 Funktionalitet 
 1.	Användaren matar in nätmodell i CIM, och får ut (syntetiska) lastprofiler och produktionsprofiler för nätets bussar i CIM-format.
