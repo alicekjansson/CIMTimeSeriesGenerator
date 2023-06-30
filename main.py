@@ -17,7 +17,7 @@ ns = {'cim':'http://iec.ch/TC57/2013/CIM-schema-cim16#',
 
 
 #-----GUI------
-gui = 0
+gui = 1
 
 if gui == 1:
     layout = [[sg.Text('Enter the required CGMES CIM/XML files')],
@@ -36,7 +36,7 @@ if gui == 1:
     ssh_xml = values[1]
     eq = ET.parse(eq_xml).getroot()
     ssh = ET.parse(ssh_xml).getroot()        
-            
+    # Here, functions to generate timeseries        
     data_extract(eq, ssh, ns)
     print('success')
     
@@ -48,6 +48,6 @@ else:
     ssh_xml = ET.parse('20171002T0930Z_1D_NL_SSH_3.xml')
     eq = eq_xml.getroot()
     ssh = ssh_xml.getroot()        
-            
+    # Here, functions to generate timeseries    
     data_extract(eq, ssh, ns)
     print('success1')
