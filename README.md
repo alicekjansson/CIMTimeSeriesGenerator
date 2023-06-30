@@ -1,12 +1,13 @@
 # CIMProject
 
+### Efter möte med Lars:
 - Läs in CIm-fil och hitta de laster och generatorer där användaren skulle kunna vilja definiera tidsserier
 - Användaren får välja vilka element som tidsserier ska skapas (eventuellt också mer input HUR de skapas)
 - Kolla upp vilket dataformat tidsserierna ska skapas i! Utgå från befintlig CIM-standard pga koppling till PowerFactory
 - Kolla upp om vår licens till PowerFactory så småningom kan utvidgas till att arbeta med CIm-format
 
 
-## Ursprungligt förslag: 
+### Ursprungligt förslag: 
 Lastprofilsgenerator som efter användarens specifikationer skapar tidsserier kopplade till en nätmodell i CIM.
 Funktionalitet 
 1.	Användaren matar in nätmodell i CIM, och får ut (syntetiska) lastprofiler och produktionsprofiler för nätets bussar i CIM-format.
