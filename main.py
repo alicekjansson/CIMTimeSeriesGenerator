@@ -17,7 +17,7 @@ ns = {'cim':'http://iec.ch/TC57/2013/CIM-schema-cim16#',
 
 
 #-----GUI------
-gui = 1
+gui = 0
 
 if gui == 1:
     layout = [[sg.Text('Enter the required CGMES CIM/XML files')],
@@ -37,7 +37,7 @@ if gui == 1:
     eq = ET.parse(eq_xml).getroot()
     ssh = ET.parse(ssh_xml).getroot()        
     # Here, functions to generate timeseries        
-    data_extract(eq, ssh, ns)
+    loads, pv_gens, hydro_gens, wind_gens, thermal_gens, nuclear_gens, undef_gens = data_extract(eq, ssh, ns)
     print('success')
     
     window.close()
@@ -49,5 +49,5 @@ else:
     eq = eq_xml.getroot()
     ssh = ssh_xml.getroot()        
     # Here, functions to generate timeseries    
-    data_extract(eq, ssh, ns)
+    loads, pv_gens, hydro_gens, wind_gens, thermal_gens, nuclear_gens, undef_gens = data_extract(eq, ssh, ns)
     print('success1')
