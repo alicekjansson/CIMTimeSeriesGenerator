@@ -17,7 +17,7 @@ ns = {'cim':'http://iec.ch/TC57/2013/CIM-schema-cim16#',
 
 
 #-----GUI------
-gui = 0
+gui = 1
 
 if gui == 1:
     layout = [[sg.Text('Enter the required CGMES CIM/XML files')],
