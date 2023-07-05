@@ -11,10 +11,13 @@ import numpy as np
 
 # Make choices
 
-# 1. Småhus hushållsel
-# 2. Småhus direktel
-# 3. Lägenhet hushållsel
-# 4. Lägenhet eluppvärmning
+# 0 Småhus
+# 1 Lägenhet
+# 2 Industri
+typ=1
+
+# Välj elområde
+elomr=4
 
 #Medelårsförbrukning kWh
 def forb():
@@ -25,6 +28,15 @@ def forb():
     return medelforb
 medelforb=forb()
 
+# Temperaturberoende
+def tempberoende():
+    smahus=np.mean([0.238,0.668,0.758,0.713,0.620,0.726,0.675,0.346,0.614,0.790,0.333,0.728,0.525])
+    flerbostad=0.08*0.645 #Only 8% of apartment buildings heated with electricity
+    industri=np.mean([0.532,0.563,0.240,0.578,0.576])
+    medel=[smahus,flerbostad,industri]
+    return medel
+psi=tempberoende()
+
 # Graddagar, SE1-SE4
 def graddagar():
     se1=np.mean([5587,6693,5317,5324])
@@ -34,7 +46,11 @@ def graddagar():
     graddag=[se1,se2,se3,se4]
     return graddag
 graddag=graddagar()
+
 # Calculate normalized annual energy and average load
+
+Ean=medelforb[typ-1]/(1+psi[typ]*((graddag[elomr-1])/3978)-1)
+Pav=Ean/8760
 
 # Transform load curve
 
