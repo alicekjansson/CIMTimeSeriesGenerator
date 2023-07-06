@@ -24,7 +24,7 @@ def data_extract(eq, ssh, ns):
     
     
     # if PVs in data create PV class and extract required data  
-    element_type = 'SolarGeneratingUnit'
+    element_type = 'PhotoVoltaicUnit'
     if eq.findall('cim:'+element_type,ns):
         pv_gens = Generators(eq, ssh, ns, element_type)
     else:

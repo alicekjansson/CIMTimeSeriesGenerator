@@ -14,7 +14,7 @@ class GridObjects:
     def __init__(self, eq, ssh, ns, element_type):
 
         self.df=pd.DataFrame()
-        
+        self.element_type = element_type 
         self.eq_list= eq.findall('cim:'+element_type,ns)
         self.ssh_list= ssh.findall('cim:'+element_type,ns)
         self.df['ID']=[element.attrib.get(ns['rdf']+'ID') for element in self.eq_list]
