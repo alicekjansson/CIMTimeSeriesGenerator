@@ -11,13 +11,23 @@ import numpy as np
 
 # Make choices
 
-# 0 Småhus
-# 1 Lägenhet
-# 2 Industri
+# 0 Småhus direktel
+# 1 Småhus hushållsel
+# 2 Lägenhet
+# 3 Industri
 typ=1
 
 # Välj elområde
 elomr=4
+
+# 0 Vinter
+# 1 Vår/Höst
+# 2 Sommar
+arstid=0
+
+# 0 Vardag
+# 1 Helg och helgdag
+dag=0
 
 #Medelårsförbrukning kWh
 def forb():
@@ -52,15 +62,48 @@ graddag=graddagar()
 Ean=medelforb[typ-1]/(1+psi[typ]*((graddag[elomr-1])/3978)-1)
 Pav=Ean/8760
 
-# Transform load curve
+# Import standard load curves
 # För småhus är vanligaste uppvärmningssätt el, antingen direktverkande eller luftvärmepump. Även endast hushållsel tittas på (t.ex. fjärrvärme)
 
 def load_df():
     df1=pd.read_csv(r'C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/Typkurvor/typkurvor_direktel.csv',delimiter=';')
+    df1.index=df1['Hour']
+    df1=df1.drop('Hour',axis=1)
+    df1=df1[~df1.index.str.contains('std')].transpose() #Remove standard deviation data
     df2=pd.read_csv(r'C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/Typkurvor/typkurvor_hushallsel.csv',delimiter=';')
+    df2.index=df2['Hour']
+    df2=df2.drop('Hour',axis=1)
+    df2=df2[~df2.index.str.contains('std')].transpose() #Remove standard deviation data
     df3=pd.read_csv(r'C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/Typkurvor/typkurvor_lagenhet.csv',delimiter=';')
+    df3.index=df3['Hour']
+    df3=df3.drop('Hour',axis=1)
+    df3=df3[~df3.index.str.contains('std')].transpose() #Remove standard deviation data
     return [df1,df2,df3]
 
 df=load_df()
+
+temperatur=pd.DataFrame(index=['Vinter','Höst/Vår','Sommar'],columns=['se1','se2','se3','se4'])
+temperatur['se1']=[0,0,0]
+temperatur['se2']=[0,0,0]
+temperatur['se3']=[0,0,0]
+temperatur['se4']=[0,0,0]
+
+def choose_curve(df,typ,elomr,arstid,dag):
+    load_curve=df[typ].transpose()
+    if dag == 0:
+        load_curve = load_curve[load_curve.index.str.contains('Wday')]
+    elif dag == 1:
+        load_curve = load_curve[load_curve.index.str.contains('Wend')]
+    if arstid == 0:
+        load_curve = load_curve[load_curve.index.str.contains('Wint')]
+    elif arstid == 1:
+        load_curve = load_curve[load_curve.index.str.contains('Aut')]
+    elif arstid == 2:
+        load_curve = load_curve[load_curve.index.str.contains('Sum')]
+    return load_curve.transpose()
+
+# Transform load curve
+load_curve=choose_curve(df,typ,elomr,arstid,dag)
+temp=temperatur.iloc[arstid,elomr-1]
 
 # Calculate new load curve
