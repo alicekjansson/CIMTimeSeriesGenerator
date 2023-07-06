@@ -53,5 +53,14 @@ Ean=medelforb[typ-1]/(1+psi[typ]*((graddag[elomr-1])/3978)-1)
 Pav=Ean/8760
 
 # Transform load curve
+# För småhus är vanligaste uppvärmningssätt el, antingen direktverkande eller luftvärmepump. Även endast hushållsel tittas på (t.ex. fjärrvärme)
+
+def load_df():
+    df1=pd.read_csv(r'C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/Typkurvor/typkurvor_direktel.csv',delimiter=';')
+    df2=pd.read_csv(r'C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/Typkurvor/typkurvor_hushallsel.csv',delimiter=';')
+    df3=pd.read_csv(r'C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/Typkurvor/typkurvor_lagenhet.csv',delimiter=';')
+    return [df1,df2,df3]
+
+df=load_df()
 
 # Calculate new load curve
