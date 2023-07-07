@@ -41,7 +41,7 @@ def load_ts2cim(eq, ns_dict, ns_register, loads, p, q, timesteps, tstep_length):
             sch_id = grp_id + '_schedule'
               
             load_group(eq, ns_register, load_name, grp_id)
-            load_schedule(eq, ns_register, load_name, sch_id, grp_id, timesteps, tstep_length)
+            load_schedule(eq, ns_register, load_name, sch_id, grp_id, tstep_length)
             
             # add timeseries and associate it with the load schedule
             tp_id_no = 0
@@ -71,7 +71,7 @@ def load_group(eq, ns, load_name, grp_id):
     
 
 
-def load_schedule(eq, ns, load_name, sch_id, grp_id, timesteps, tstep_length):
+def load_schedule(eq, ns, load_name, sch_id, grp_id, tstep_length):
     # add ConformLoadSchedule instance
     load_sch = SubElement(eq, QName(ns['cim'], 'ConformLoadSchedule'), {QName(ns['rdf'], 'ID'): '_' + sch_id })
     
@@ -118,7 +118,7 @@ def gen_opsch2cim(eq, ns_dict, ns_register, gens, p, timesteps, tstep_length):
             op_id = 'gen_unit_commit_no' + str(op_id_no) + '_schedule'
             sch_id = op_id 
               
-            gen_op_schedule(eq, ns_register, gen_name, sch_id, timesteps, tstep_length)
+            gen_op_schedule(eq, ns_register, gen_name, sch_id, tstep_length)
             # add timeseries and associate it with the gen op schedule
             tp_id_no = 0
             
@@ -134,7 +134,7 @@ def gen_opsch2cim(eq, ns_dict, ns_register, gens, p, timesteps, tstep_length):
             op_id_no+=1
 
 
-def gen_op_schedule(eq, ns, gen_name, sch_id, timesteps, tstep_length):
+def gen_op_schedule(eq, ns, gen_name, sch_id, tstep_length):
     # add GenUnitOpSchedule instance
     op_sch = SubElement(eq, QName(ns['cim'], 'GenUnitOpSchedule'), {QName(ns['rdf'], 'ID'): '_' + sch_id })
     
@@ -179,7 +179,7 @@ def gen_mea2cim(eq, ns_dict, ns_register, gens, p, timesteps, tstep_length):
             meas_id = 'gen_meas_series_no' + str(meas_id_no)
             sch_id = meas_id
               
-            gen_meas(eq, ns_register, gen_name, gen_id, sch_id, timesteps, tstep_length)
+            gen_meas(eq, ns_register, gen_name, gen_id, sch_id, tstep_length)
             # add timeseries (analog values) and associate it with the Analog measurement
             tp_id_no = 0
             
@@ -194,7 +194,7 @@ def gen_mea2cim(eq, ns_dict, ns_register, gens, p, timesteps, tstep_length):
              
             meas_id_no+=1
 
-def gen_meas(eq, ns, gen_name, gen_id, sch_id, timesteps, tstep_length):
+def gen_meas(eq, ns, gen_name, gen_id, sch_id, tstep_length):
     # add Analog (measurement) instance
     meas = SubElement(eq, QName(ns['cim'], 'Analog'), {QName(ns['rdf'], 'ID'): '_' + sch_id })
     
@@ -205,7 +205,7 @@ def gen_meas(eq, ns, gen_name, gen_id, sch_id, timesteps, tstep_length):
     meas_name = SubElement(meas, QName(ns['cim'], 'IdentifiedObject.name'))
     meas_name.text = gen_name + '_timeseries'
     meas_descript = SubElement(meas, QName(ns['cim'], 'IdentifiedObject.description'))
-    meas_descript.text = sch_id
+    meas_descript.text = 'sTimestep=' + str(tstep_length) 
     
     # Why not Unitmultipliers in MicroGrid example???
     SubElement(meas, QName(ns['cim'], 'Measurement.unitMultiplier'), {QName(ns['rdf'], 'resource'): 'http://iec.ch/TC57/2013/CIM-schema-cim16#UnitMultiplier.M'})
