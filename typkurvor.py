@@ -47,11 +47,29 @@ arstid=2
 # 1 Helg och helgdag
 dag=0
 
+dwellings=['Småhus Direktel','Småhus Hushållsel','Lägenhet','Industri']
+bids=['SE1','SE2','SE3','SE4']
+seasons=['Winter','Autumn/Spring','Summer']
+days=['Weekday','Weekend']
+
+#OBS DETTA FUNKAR EJ MÅSTE LÖSA SÅ ATT MAN KAN DEFINIERA VÄRDENA I GUI
 while True:
     event, values = window.read()
     # End program if user closes window
     if event == "Exit" or event == sg.WIN_CLOSED:
         break
+    for i,d in enumerate(dwellings):
+        if event == d:
+            typ=i
+    for i,d in enumerate(bids):
+        if event == d:
+            elomr=i+1
+    for i,d in enumerate(seasons):
+        if event == d:
+            arstid=i
+    for i,d in enumerate(days):
+        if event == d:
+            dag=i
     if event == 'Generate Timeseries':
         P=generate_timeseries(typ,elomr,arstid,dag)
         break
@@ -60,7 +78,6 @@ window.close()
 
 
 # TO-DO:
-# Make layout
 # Make selections in GUI change values in script
 # Add to GUI that P is saved as csv 
 # Add option to select yearly or daily profile
@@ -68,6 +85,3 @@ window.close()
 # Aggregate load profiles to higher voltage levels
 # Add selection of voltage level / average power
 # Deal with generation
-
-
-
