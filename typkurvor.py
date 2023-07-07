@@ -104,6 +104,7 @@ def choose_curve(df,typ,elomr,arstid,dag):
 
 # Transform load curve
 load_curve=choose_curve(df,typ,elomr,arstid,dag)
+load_temps=[float(el.split(':')[1]) for el in load_curve.columns]
 temp=temperatur.iloc[arstid,elomr-1]
 
 # Calculate new load curve
