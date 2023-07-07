@@ -64,7 +64,7 @@ def choose_curve(df,typ,elomr,arstid,dag):
         load_curve = load_curve[load_curve.index.str.contains('Aut')]
     elif arstid == 2:
         load_curve = load_curve[load_curve.index.str.contains('Sum')]
-    return load_curve.transpose()
+    return load_curve.transpose()/100
 
 #Return closest temperatures 
 def choose_temp(load_curve,temp,arstid,elomr):
@@ -77,6 +77,6 @@ def choose_temp(load_curve,temp,arstid,elomr):
             done=True
             break
     if done == False:
-        load_temps=load_temps[1:]
+        load_temps=load_temps[-2:]
     load_temps=[load_temps,[i-1,i]]
     return load_temps

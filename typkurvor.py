@@ -9,6 +9,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from alice_func import forb,tempberoende,graddagar,load_df, choose_curve, choose_temp
+import PySimpleGUI as sg
 
 # Make choices
 
@@ -16,7 +17,7 @@ from alice_func import forb,tempberoende,graddagar,load_df, choose_curve, choose
 # 1 Småhus hushållsel
 # 2 Lägenhet
 # 3 Industri
-typ=1
+typ=0
 
 # Välj elområde
 elomr=4
@@ -24,7 +25,7 @@ elomr=4
 # 0 Vinter
 # 1 Vår/Höst
 # 2 Sommar
-arstid=1
+arstid=2
 
 # 0 Vardag
 # 1 Helg och helgdag
@@ -41,8 +42,9 @@ graddag=graddagar()
 
 # Calculate normalized annual energy and average load
 
-Ean=medelforb[typ-1]/(1+psi[typ]*((graddag[elomr-1])/3978)-1)
+Ean=medelforb[typ-1]*(1+psi[typ]*((graddag[elomr-1])/3978)-1)
 Pav=Ean/8760
+# Pav=medelforb[typ-1]/8760
 
 # Import standard load curves
 # För småhus är vanligaste uppvärmningssätt el, antingen direktverkande eller luftvärmepump. Även endast hushållsel tittas på (t.ex. fjärrvärme)
@@ -63,15 +65,14 @@ load_curve=load_curve.iloc[:,load_temps[1]]
 
 #Transform load curve
 P=pd.DataFrame(index=load_curve.index,columns=['P'])
-
 for i,row in load_curve.transpose().items():
-    pnew=(row.iloc[1]-row.iloc[0])/(load_temps[0][1]-load_temps[0][0])*(temp-load_temps[0][0])
+    pnew=row.iloc[0]-((row.iloc[1]-row.iloc[0])/(load_temps[1][0]-load_temps[0][0])*(temp-load_temps[0][0]))
     P.loc[i,'P']=float(pnew)*Pav
-
+P2=P.copy()/Pav
 fig,ax=plt.subplots(1,figsize=[8,4])
-P.plot(ax=ax)
+P2.plot(ax=ax)
 load_curve.plot(ax=ax)
-ax.set_ylabel('Consumption [kW]')
+ax.set_ylabel('Consumption [% of average load]')
 ax.set_title('Load curve')
 plt.xticks(rotation=45)
 plt.legend()
