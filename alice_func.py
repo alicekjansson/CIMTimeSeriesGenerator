@@ -80,3 +80,47 @@ def choose_temp(load_curve,temp,arstid,elomr):
         load_temps=load_temps[-2:]
     load_temps=[load_temps,[i-1,i]]
     return load_temps
+
+#Transform load curve
+def transform_load(load_curve,load_temps,Pav,temp):
+    P=pd.DataFrame(index=load_curve.index,columns=['P'])
+    for i,row in load_curve.transpose().items():
+        pnew=row.iloc[0]-((row.iloc[1]-row.iloc[0])/(load_temps[1][0]-load_temps[0][0])*(temp-load_temps[0][0]))
+        P.loc[i,'P']=float(pnew)*Pav
+    P2=P.copy()/Pav
+    fig,ax=plt.subplots(1,figsize=[8,4])
+    P2.plot(ax=ax)
+    load_curve.plot(ax=ax)
+    ax.set_ylabel('Consumption [% of average load]')
+    ax.set_title('Load curve')
+    plt.xticks(rotation=45)
+    plt.legend()
+    return P
+
+def generate_timeseries(typ,elomr,arstid,dag):
+    #Medelårsförbrukning kWh
+    medelforb=forb()
+    # Temperaturberoende
+    psi=tempberoende()
+    # Graddagar, SE1-SE4
+    graddag=graddagar()
+    # Calculate normalized annual energy and average load
+    Ean=medelforb[typ-1]*(1+psi[typ]*((graddag[elomr-1])/3978)-1)
+    Pav=Ean/8760
+    # Import standard load curves
+    # För småhus är vanligaste uppvärmningssätt el, antingen direktverkande eller luftvärmepump. Även endast hushållsel tittas på (t.ex. fjärrvärme)
+    df=load_df()
+    #Define seasonal temperatures in se1-se4
+    temperatur=pd.DataFrame(index=['Vinter','Höst/Vår','Sommar'],columns=['se1','se2','se3','se4'])
+    temperatur['se1']=[-20,0,10]
+    temperatur['se2']=[-20,0,15]
+    temperatur['se3']=[-10,5,20]
+    temperatur['se4']=[-5,10,20]
+    # Select correct load curve and temperatures
+    load_curve=choose_curve(df,typ,elomr,arstid,dag)
+    temp=temperatur.iloc[arstid,elomr-1]
+    load_temps=choose_temp(load_curve,temp,arstid,elomr)
+    load_curve=load_curve.iloc[:,load_temps[1]]
+    #Transform load curve
+    P=transform_load(load_curve,load_temps,Pav,temp)
+    return P

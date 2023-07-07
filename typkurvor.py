@@ -8,8 +8,24 @@ Created on Wed Jul  5 09:29:40 2023
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-from alice_func import forb,tempberoende,graddagar,load_df, choose_curve, choose_temp
+from alice_func import generate_timeseries
 import PySimpleGUI as sg
+
+#Create GUI
+sg.theme('DarkTeal4')
+layout = [[sg.Text('Define the requirements of time series')],
+          [sg.Text('Choose dwelling:')],
+          [sg.Combo(['Småhus Direktel','Småhus Hushållsel','Lägenhet','Industri'])],
+          [sg.Text('Choose bidding area:')],
+          [sg.Combo(['SE1','SE2','SE3','SE4'])],
+          [sg.Text('Choose season:')],
+          [sg.Combo(['Winter','Autumn/Spring','Summer'])],
+          [sg.Text('Choose day:')],
+          [sg.Combo(['Weekday','Weekend'])],
+          [sg.Submit('Generate Timeseries'),sg.Exit()]]
+
+# Create the window
+window = sg.Window('Timeseries Generator', layout)
 
 # Make choices
 
@@ -20,7 +36,7 @@ import PySimpleGUI as sg
 typ=0
 
 # Välj elområde
-elomr=4
+elomr=2
 
 # 0 Vinter
 # 1 Vår/Höst
@@ -31,48 +47,27 @@ arstid=2
 # 1 Helg och helgdag
 dag=0
 
-#Medelårsförbrukning kWh
-medelforb=forb()
+while True:
+    event, values = window.read()
+    # End program if user closes window
+    if event == "Exit" or event == sg.WIN_CLOSED:
+        break
+    if event == 'Generate Timeseries':
+        P=generate_timeseries(typ,elomr,arstid,dag)
+        break
 
-# Temperaturberoende
-psi=tempberoende()
+window.close()
 
-# Graddagar, SE1-SE4
-graddag=graddagar()
 
-# Calculate normalized annual energy and average load
+# TO-DO:
+# Make layout
+# Make selections in GUI change values in script
+# Add to GUI that P is saved as csv 
+# Add option to select yearly or daily profile
+# Deal with industry load
+# Aggregate load profiles to higher voltage levels
+# Add selection of voltage level / average power
+# Deal with generation
 
-Ean=medelforb[typ-1]*(1+psi[typ]*((graddag[elomr-1])/3978)-1)
-Pav=Ean/8760
-# Pav=medelforb[typ-1]/8760
 
-# Import standard load curves
-# För småhus är vanligaste uppvärmningssätt el, antingen direktverkande eller luftvärmepump. Även endast hushållsel tittas på (t.ex. fjärrvärme)
-df=load_df()
 
-#Define seasonal temperatures in se1-se4
-temperatur=pd.DataFrame(index=['Vinter','Höst/Vår','Sommar'],columns=['se1','se2','se3','se4'])
-temperatur['se1']=[-20,0,10]
-temperatur['se2']=[-20,0,15]
-temperatur['se3']=[-10,5,20]
-temperatur['se4']=[-5,10,20]
-
-# Select correct load curve and temperatures
-load_curve=choose_curve(df,typ,elomr,arstid,dag)
-temp=temperatur.iloc[arstid,elomr-1]
-load_temps=choose_temp(load_curve,temp,arstid,elomr)
-load_curve=load_curve.iloc[:,load_temps[1]]
-
-#Transform load curve
-P=pd.DataFrame(index=load_curve.index,columns=['P'])
-for i,row in load_curve.transpose().items():
-    pnew=row.iloc[0]-((row.iloc[1]-row.iloc[0])/(load_temps[1][0]-load_temps[0][0])*(temp-load_temps[0][0]))
-    P.loc[i,'P']=float(pnew)*Pav
-P2=P.copy()/Pav
-fig,ax=plt.subplots(1,figsize=[8,4])
-P2.plot(ax=ax)
-load_curve.plot(ax=ax)
-ax.set_ylabel('Consumption [% of average load]')
-ax.set_title('Load curve')
-plt.xticks(rotation=45)
-plt.legend()
