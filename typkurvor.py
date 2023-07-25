@@ -45,7 +45,6 @@ bids=['SE1','SE2','SE3','SE4']
 seasons=['Winter','Autumn/Spring','Summer']
 days=['Weekday','Weekend']
 
-#OBS DETTA FUNKAR EJ MÅSTE LÖSA SÅ ATT MAN KAN DEFINIERA VÄRDENA I GUI
 while True:
     event, values = window.read()
     # End program if user closes window
