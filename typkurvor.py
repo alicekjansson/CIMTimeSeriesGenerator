@@ -45,12 +45,13 @@ bids=['SE1','SE2','SE3','SE4']
 seasons=['Winter','Autumn/Spring','Summer']
 days=['Weekday','Weekend']
 
+
+
 while True:
     event, values = window.read()
     # End program if user closes window
     if event == "Exit" or event == sg.WIN_CLOSED:
         break
-    
     if values['TYP']:
         choice=values['TYP']                # Get user choice
         for i,d in enumerate(dwellings):    # Get user choice in int form
@@ -72,8 +73,12 @@ while True:
             if choice == d:
                 dag=i
     if event == 'Generate Timeseries':
-        P=generate_timeseries(typ,elomr,arstid,dag)
-        break
+        #Add check for if not all categories are defined by user
+        if not ( values['TYP'] and values['SEASON']and values['ZONE'] and values['DAY']):
+            sg.popup('Not all user input defined')
+        else:
+            P=generate_timeseries(typ,elomr,arstid,dag)
+            break
 
 window.close()
 
