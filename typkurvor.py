@@ -13,19 +13,21 @@ import PySimpleGUI as sg
 
 #Create GUI
 sg.theme('DarkTeal4')
-layout = [[sg.Text('Define the requirements of time series')],
+layout = [[sg.Text('Define Time Series')],
           [sg.Text('Choose dwelling:')],
-          [sg.Combo(['Småhus Direktel','Småhus Hushållsel','Lägenhet','Industri'],key='TYP',enable_events=True)],
+          [sg.Combo(['Småhus Direktel','Småhus Hushållsel','Lägenhet','Industri'],key='TYP',enable_events=True,default_value='Småhus Direktel')],
           [sg.Text('Choose bidding area:')],
-          [sg.Combo(['SE1','SE2','SE3','SE4'],key='ZONE',enable_events=True)],
+          [sg.Combo(['SE1','SE2','SE3','SE4'],key='ZONE',enable_events=True,default_value='SE4')],
           [sg.Text('Choose season:')],
-          [sg.Combo(['Winter','Autumn/Spring','Summer'],key='SEASON',enable_events=True)],
+          [sg.Combo(['Winter','Autumn/Spring','Summer'],key='SEASON',enable_events=True,default_value='Winter')],
           [sg.Text('Choose day:')],
-          [sg.Combo(['Weekday','Weekend'],key='DAY',enable_events=True)],
-          [sg.Submit('Generate Timeseries'),sg.Exit()]]
+          [sg.Combo(['Weekday','Weekend'],key='DAY',enable_events=True,default_value='Weekday')],
+          [sg.Text('CSV Name', size=(12, 1)), sg.Input(key='Name')],
+          [sg.Text('CSV Location', size=(12, 1)), sg.Input('C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/Generated_csv',key='loc'), sg.FolderBrowse()],
+          [sg.Submit('Only Generate Timeseries'),sg.Submit('Generate and Save as CSV'),sg.Exit()]]
 
 # Create the window
-window = sg.Window('Timeseries Generator', layout)
+window = sg.Window('Load Timeseries Generator', layout)
 
 # TYP
 # 0 Småhus direktel
@@ -44,7 +46,6 @@ dwellings=['Småhus Direktel','Småhus Hushållsel','Lägenhet','Industri']
 bids=['SE1','SE2','SE3','SE4']
 seasons=['Winter','Autumn/Spring','Summer']
 days=['Weekday','Weekend']
-
 
 # Run GUI
 while True:
@@ -72,21 +73,32 @@ while True:
         for i,d in enumerate(days):
             if choice == d:
                 dag=i
-    if event == 'Generate Timeseries':
+    if event == 'Only Generate Timeseries':
         #Add check for if not all categories are defined by user
         if not ( values['TYP'] and values['SEASON']and values['ZONE'] and values['DAY']):
             sg.popup('Not all user input defined')
         else:
             P=generate_timeseries(typ,elomr,arstid,dag)
             break
+    if event == 'Generate and Save as CSV':
+        #Add check for if not all categories are defined by user
+        if not ( values['TYP'] and values['SEASON']and values['ZONE'] and values['DAY']):
+            sg.popup('Not all user input defined')
+        elif not ( values['Name'] and values['loc']):
+            sg.popup('CSV location not defined')
+        else:
+            P=generate_timeseries(typ,elomr,arstid,dag)
+            name=values['Name']
+            loc=values['loc']
+            csv_loc=str(loc)+'/'+str(name)+'.csv'
+            P.to_csv(csv_loc)
+            break
 
 window.close()
 
 
 # TO-DO:
-# Add to GUI that P is saved as csv 
 # Add option to select yearly or daily profile
-# Deal with industry load
 # Aggregate load profiles to higher voltage levels
 # Add selection of voltage level / average power
 # Deal with generation

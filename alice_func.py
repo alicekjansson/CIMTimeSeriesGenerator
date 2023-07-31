@@ -21,7 +21,7 @@ def forb():
 def tempberoende():
     smahus=np.mean([0.668,0.758,0.713,0.620,0.726,0.675,0.346,0.614,0.790,0.333,0.728,0.525])
     flerbostad=0.08*0.645 #Only 8% of apartment buildings heated with electricity
-    industri=0.578
+    industri=0.578  #Minre industri med elvärme
     medel=[smahus,0.238,flerbostad,industri]
     return medel
 
@@ -40,19 +40,23 @@ def load_df():
     df1=pd.read_csv(r'C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/Typkurvor/typkurvor_direktel.csv',delimiter=';')
     df1.index=df1['Hour']
     df1=df1.drop('Hour',axis=1)
+    std1=df1[df1.index.str.contains('std')].transpose() #Save standard deviation data
     df1=df1[~df1.index.str.contains('std')].transpose() #Remove standard deviation data
     df2=pd.read_csv(r'C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/Typkurvor/typkurvor_hushallsel.csv',delimiter=';')
     df2.index=df2['Hour']
     df2=df2.drop('Hour',axis=1)
+    std2=df2[df2.index.str.contains('std')].transpose() #Save standard deviation data
     df2=df2[~df2.index.str.contains('std')].transpose() #Remove standard deviation data
     df3=pd.read_csv(r'C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/Typkurvor/typkurvor_lagenhet.csv',delimiter=';')
     df3.index=df3['Hour']
     df3=df3.drop('Hour',axis=1)
+    std3=df3[df3.index.str.contains('std')].transpose() #Save standard deviation data
     df3=df3[~df3.index.str.contains('std')].transpose() #Remove standard deviation data
     df4=pd.read_csv(r'C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/Typkurvor/typkurvor_industri.csv',delimiter=';')
     df4.index=df4['Hour']
     df4=df4.drop('Hour',axis=1).transpose()
-    return [df1,df2,df3,df4]
+    df4=df4*100
+    return [df1,df2,df3,df4],[std1,std2,std3]
 
 #Returns chosen load curve
 def choose_curve(df,typ,elomr,arstid,dag):
@@ -68,6 +72,7 @@ def choose_curve(df,typ,elomr,arstid,dag):
     elif arstid == 2:
         load_curve = load_curve[load_curve.index.str.contains('Sum')]
     return load_curve.transpose()/100
+        
 
 #Return closest temperatures 
 def choose_temp(load_curve,temp,arstid,elomr):
@@ -96,6 +101,7 @@ def transform_load(load_curve,load_temps,Pav,temp):
     P2.plot(ax=ax)
     ax.set_ylabel('Consumption [% of average load]')
     ax.set_title('Load curve')
+    ax.set_xlabel('Hour')
     plt.xticks(rotation=45)
     plt.legend()
     return P
@@ -112,7 +118,8 @@ def generate_timeseries(typ,elomr,arstid,dag):
     Pav=Ean/8760
     # Import standard load curves
     # För småhus är vanligaste uppvärmningssätt el, antingen direktverkande eller luftvärmepump. Även endast hushållsel tittas på (t.ex. fjärrvärme)
-    df=load_df()
+    # df=load_df()
+    df,std=load_df()
     #Define seasonal temperatures in se1-se4
     temperatur=pd.DataFrame(index=['Vinter','Höst/Vår','Sommar'],columns=['se1','se2','se3','se4'])
     temperatur['se1']=[-20,0,10]
