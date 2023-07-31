@@ -14,15 +14,15 @@ def forb():
     smahus=np.mean([6311,24166,20247,23456,23994,35254,18859,23927,30699,21951,22016,44637,21217])
     flerbostad=np.mean([187226,144237])
     industri=np.mean([102028,135285,169029,96287])
-    medelforb=[smahus,flerbostad,industri]
+    medelforb=[smahus,smahus,flerbostad,industri]
     return medelforb
 
 # Temperaturberoende
 def tempberoende():
-    smahus=np.mean([0.238,0.668,0.758,0.713,0.620,0.726,0.675,0.346,0.614,0.790,0.333,0.728,0.525])
+    smahus=np.mean([0.668,0.758,0.713,0.620,0.726,0.675,0.346,0.614,0.790,0.333,0.728,0.525])
     flerbostad=0.08*0.645 #Only 8% of apartment buildings heated with electricity
-    industri=np.mean([0.532,0.563,0.240,0.578,0.576])
-    medel=[smahus,flerbostad,industri]
+    industri=0.578
+    medel=[smahus,0.238,flerbostad,industri]
     return medel
 
 # Graddagar, SE1-SE4
@@ -49,7 +49,10 @@ def load_df():
     df3.index=df3['Hour']
     df3=df3.drop('Hour',axis=1)
     df3=df3[~df3.index.str.contains('std')].transpose() #Remove standard deviation data
-    return [df1,df2,df3]
+    df4=pd.read_csv(r'C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/Typkurvor/typkurvor_industri.csv',delimiter=';')
+    df4.index=df4['Hour']
+    df4=df4.drop('Hour',axis=1).transpose()
+    return [df1,df2,df3,df4]
 
 #Returns chosen load curve
 def choose_curve(df,typ,elomr,arstid,dag):
@@ -89,8 +92,8 @@ def transform_load(load_curve,load_temps,Pav,temp):
         P.loc[i,'P']=float(pnew)*Pav
     P2=P.copy()/Pav
     fig,ax=plt.subplots(1,figsize=[8,4])
-    P2.plot(ax=ax)
     load_curve.plot(ax=ax)
+    P2.plot(ax=ax)
     ax.set_ylabel('Consumption [% of average load]')
     ax.set_title('Load curve')
     plt.xticks(rotation=45)
@@ -105,7 +108,7 @@ def generate_timeseries(typ,elomr,arstid,dag):
     # Graddagar, SE1-SE4
     graddag=graddagar()
     # Calculate normalized annual energy and average load
-    Ean=medelforb[typ-1]*(1+psi[typ]*((graddag[elomr-1])/3978)-1)
+    Ean=medelforb[typ]*(1+(psi[typ]*((graddag[elomr-1])/3978)-1))
     Pav=Ean/8760
     # Import standard load curves
     # För småhus är vanligaste uppvärmningssätt el, antingen direktverkande eller luftvärmepump. Även endast hushållsel tittas på (t.ex. fjärrvärme)

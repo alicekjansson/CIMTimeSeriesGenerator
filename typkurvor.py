@@ -46,7 +46,7 @@ seasons=['Winter','Autumn/Spring','Summer']
 days=['Weekday','Weekend']
 
 
-
+# Run GUI
 while True:
     event, values = window.read()
     # End program if user closes window
