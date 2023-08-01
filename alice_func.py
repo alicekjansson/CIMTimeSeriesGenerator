@@ -78,35 +78,42 @@ def choose_curve(df,typ,elomr,arstid,dag):
 def choose_temp(load_curve,temp,arstid,elomr):
     load_temps=[float(el.split(':')[1]) for el in load_curve.columns]
     load_temps.sort()
-    done=False
+    maxi=len(load_temps)
     for i,el in enumerate(load_temps):
-        if temp<el:
-            load_temps=[load_temps[i],load_temps[i-1]]
-            done=True
+        if i==maxi-1:
+            load_temps=load_temps[-2:]
             break
-    if done == False:
-        load_temps=load_temps[-2:]
-    load_temps=[load_temps,[i-1,i]]
-    return load_temps
+        if temp<el:
+            if i==0:
+                load_temps=[load_temps[0],load_temps[1]]
+                break
+            else:
+                load_temps=[load_temps[i-1],load_temps[i]]
+                break
+    load_temps=[float(el) for el in load_temps]
+    load_curve=load_curve.transpose()
+    temp_curves=load_curve[load_curve.index.str.contains(str(load_temps[0])) | load_curve.index.str.contains(str(load_temps[1]))].transpose()
+    return temp_curves, load_temps
 
 #Transform load curve
-def transform_load(load_curve,load_temps,Pav,temp):
+def transform_load(load_curve,load_temps,Pav,temp,plot):
     P=pd.DataFrame(index=load_curve.index,columns=['P'])
     for i,row in load_curve.transpose().items():
-        pnew=row.iloc[0]-((row.iloc[1]-row.iloc[0])/(load_temps[1][0]-load_temps[0][0])*(temp-load_temps[0][0]))
+        pnew=row.iloc[1]-((row.iloc[0]-row.iloc[1])/(load_temps[0]-load_temps[1])*(temp-load_temps[1]))
         P.loc[i,'P']=float(pnew)*Pav
     P2=P.copy()/Pav
-    fig,ax=plt.subplots(1,figsize=[8,4])
-    load_curve.plot(ax=ax)
-    P2.plot(ax=ax)
-    ax.set_ylabel('Consumption [% of average load]')
-    ax.set_title('Load curve')
-    ax.set_xlabel('Hour')
-    plt.xticks(rotation=45)
-    plt.legend()
+    if plot ==True:
+        fig,ax=plt.subplots(1,figsize=[8,4])
+        load_curve.plot(ax=ax)
+        P2.plot(ax=ax)
+        ax.set_ylabel('Consumption [% of average load]')
+        ax.set_title('Load curve')
+        ax.set_xlabel('Hour')
+        plt.xticks(rotation=45)
+        plt.legend()
     return P
 
-def generate_timeseries(typ,elomr,arstid,dag):
+def generate_timeseries(typ,elomr,arstid,dag,plot):
     #Medelårsförbrukning kWh
     medelforb=forb()
     # Temperaturberoende
@@ -129,8 +136,24 @@ def generate_timeseries(typ,elomr,arstid,dag):
     # Select correct load curve and temperatures
     load_curve=choose_curve(df,typ,elomr,arstid,dag)
     temp=temperatur.iloc[arstid,elomr-1]
-    load_temps=choose_temp(load_curve,temp,arstid,elomr)
-    load_curve=load_curve.iloc[:,load_temps[1]]
+    load_curve,load_temps=choose_temp(load_curve,temp,arstid,elomr)
     #Transform load curve
-    P=transform_load(load_curve,load_temps,Pav,temp)
+    P=transform_load(load_curve,load_temps,Pav,temp,plot)
     return P
+
+def aggregate(typ,elomr,arstid,dag,N):
+    #Sammanlagringsfaktor
+    S=[0.81,0.59,0.6,0.76]
+    Pall=pd.DataFrame()
+    for i in range(N):
+        P=generate_timeseries(typ,elomr,arstid,dag,False)
+        Pall[i]=P
+    Ptot=Pall.sum(axis=1)
+    PtotS=Ptot*S[typ]
+    fig,ax=plt.subplots(1,figsize=[8,4])
+    PtotS.plot(ax=ax)
+    ax.set_xlabel('Hour')
+    ax.set_ylabel('Total consumption (kW)')
+    dwellings=['Småhus Direktel','Småhus Hushållsel','Lägenhet','Industri']
+    ax.set_title('Aggregated load of ' + str(N) + ' x ' + str(dwellings[typ]))
+    return PtotS

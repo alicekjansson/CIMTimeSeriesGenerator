@@ -8,14 +8,16 @@ Created on Wed Jul  5 09:29:40 2023
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-from alice_func import generate_timeseries
+from alice_func import aggregate
 import PySimpleGUI as sg
 
 #Create GUI
 sg.theme('DarkTeal4')
-layout = [[sg.Text('Define Time Series')],
+layout = [[sg.Text('Time Series Generator',font=('Helvetica',30))],
           [sg.Text('Choose dwelling:')],
           [sg.Combo(['Småhus Direktel','Småhus Hushållsel','Lägenhet','Industri'],key='TYP',enable_events=True,default_value='Småhus Direktel')],
+          [sg.Text('Choose number of objects:')],
+          [sg.Input('100',key='nbr_objects',size=(5, 1))],
           [sg.Text('Choose bidding area:')],
           [sg.Combo(['SE1','SE2','SE3','SE4'],key='ZONE',enable_events=True,default_value='SE4')],
           [sg.Text('Choose season:')],
@@ -78,20 +80,30 @@ while True:
         if not ( values['TYP'] and values['SEASON']and values['ZONE'] and values['DAY']):
             sg.popup('Not all user input defined')
         else:
-            P=generate_timeseries(typ,elomr,arstid,dag)
-            break
+            try:
+                N=int(values['nbr_objects'])
+                PtotS=aggregate(typ,elomr,arstid,dag,N)
+                break
+            except ValueError:
+                sg.popup('Please enter integer nbr of objects')
     if event == 'Generate and Save as CSV':
         #Add check for if not all categories are defined by user
         if not ( values['TYP'] and values['SEASON']and values['ZONE'] and values['DAY']):
             sg.popup('Not all user input defined')
         elif not ( values['Name'] and values['loc']):
-            sg.popup('CSV location not defined')
+            sg.popup('CSV name or location not defined')
         else:
-            P=generate_timeseries(typ,elomr,arstid,dag)
-            name=values['Name']
-            loc=values['loc']
-            csv_loc=str(loc)+'/'+str(name)+'.csv'
-            P.to_csv(csv_loc)
+            try:
+                N=int(values['nbr_objects'])
+                PtotS=aggregate(typ,elomr,arstid,dag,N)
+                name=values['Name']
+                loc=values['loc']
+                csv_loc=str(loc)+'/'+str(name)+'.csv'
+                PtotS.to_csv(csv_loc)
+                break
+            except ValueError:
+                sg.popup('Please enter integer nbr of objects')
+            
             break
 
 window.close()
