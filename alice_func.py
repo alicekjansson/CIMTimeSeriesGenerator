@@ -145,12 +145,12 @@ def aggregate(typ,elomr,arstid,dag,N):
     #Sammanlagringsfaktor
     S=[0.81,0.6,0.76,0.59]
     andel_elvarme=0.3       #Cirka 30% av småhus uppvärmda med elvärme enligt Energimyndighetens statistik 2021
-    Pall=pd.DataFrame()
+    Pall=pd.DataFrame(columns=[i for i in range(N)])
     #Apartment or Industry
     if typ!=0:
         for i in range(N):
             P=generate_timeseries(typ,elomr,arstid,dag,False)
-            Pall[i]=P
+            Pall=pd.concat([Pall,P],axis=1)
         Ptot=Pall.sum(axis=1)
         #If more than one object, add aggregation factor
         if N!=1:
@@ -161,7 +161,7 @@ def aggregate(typ,elomr,arstid,dag,N):
         N_other=N-N_el
         for i in range(N_el):
             P=generate_timeseries(3,elomr,arstid,dag,False)
-            Pall[i]=P
+            Pall=pd.concat([Pall,P],axis=1)
         Ptot=Pall.sum(axis=1)
         #If more than one object, add aggregation factor
         if N!=1:
@@ -169,18 +169,10 @@ def aggregate(typ,elomr,arstid,dag,N):
         Pall=pd.DataFrame()
         for i in range(N_other):
             P=generate_timeseries(0,elomr,arstid,dag,False)
-            Pall[N_el+i]=P
+            Pall=pd.concat([Pall,P],axis=1)
         Ptot2=Pall.sum(axis=1)
         #If more than one object, add aggregation factor
         if N!=1:
             Ptot2=Ptot2*S[0]
         Ptot=Ptot+Ptot2         #Add load from both house types
-    
-    
-    fig,ax=plt.subplots(1,figsize=[8,4])
-    Ptot.plot(ax=ax)
-    ax.set_xlabel('Hour')
-    ax.set_ylabel('Total consumption (kW)')
-    dwellings=['Småhus','Lägenhet','Industri']
-    ax.set_title('Aggregated load')
     return Ptot

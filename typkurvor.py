@@ -17,19 +17,19 @@ import PySimpleGUI as sg
 sg.theme('LightGreen5')
 layout1 = [
     [sg.Text("#Houses:")],
-    [sg.Input('100',key='nbr_house')],
-    [sg.Text('Choose bidding area:')],
+    [sg.Input('1000',key='nbr_house')],
+    [sg.Text('Choose bidding area:')],  
     [sg.Combo(['SE1','SE2','SE3','SE4'],key='ZONE',enable_events=True,default_value='SE4',size=[10,10])],
 ]
 layout2 = [
     [sg.Text("#Apartment buildings:")],
-    [sg.Input('100',key='nbr_apartm')],
+    [sg.Input('10',key='nbr_apartm')],
     [sg.Text('Choose season:')],
     [sg.Combo(['Winter','Autumn/Spring','Summer'],key='SEASON',enable_events=True,default_value='Winter')],
 ]
 layout3 = [
     [sg.Text("#Industry:")],
-    [sg.Input('100',key='nbr_industry')],
+    [sg.Input('10',key='nbr_industry')],
     [sg.Text('Choose day:')],
     [sg.Combo(['Weekday','Weekend'],key='DAY',enable_events=True,default_value='Weekday')],
 ]
@@ -95,6 +95,7 @@ while True:
                 dag=i
     for n,gen in enumerate(['Only Generate Timeseries','Generate and Save as CSV']):
         if event == gen:
+            P_tot=[]
             for i,nbr in enumerate(['nbr_house','nbr_apartm','nbr_industry']):
                 typ=i
                 #Add check for if not all categories are defined by user
@@ -103,27 +104,29 @@ while True:
                 else:
                     try:
                         N=int(values[nbr])
-                        PtotS=aggregate(typ,elomr,arstid,dag,N)
-                        if n==0:
-                            window.close()
-                        if n == 1:
-                            if not ( values['Name'] and values['loc']):
-                                sg.popup('CSV name or location not defined')
-                            else:
-                                name=values['Name']
-                                loc=values['loc']
-                                csv_loc=str(loc)+'/'+str(name)+'.csv'
-                                PtotS.to_csv(csv_loc)
-                                window.close()
+                        P_tot.append(aggregate(typ,elomr,arstid,dag,N))
                     except ValueError:
                         sg.popup('Please enter integer nbr of objects')
                         break
+            P_tot=pd.DataFrame(P_tot).sum()
+            fig,ax=plt.subplots(1,figsize=[8,4])
+            P_tot.plot(ax=ax)
+            ax.set_xlabel('Hour')
+            ax.set_ylabel('Total consumption (kW)')
+            dwellings=['Småhus','Lägenhet','Industri']
+            ax.set_title('Aggregated load')
+            if n==0:
+                window.close()
+            if n == 1:
+                if not ( values['Name'] and values['loc']):
+                    sg.popup('CSV name or location not defined')
+                else:
+                    name=values['Name']
+                    loc=values['loc']
+                    csv_loc=str(loc)+'/'+str(name)+'.csv'
+                    P_tot.to_csv(csv_loc)
+                    window.close()
+            
             
 window.close()        
 
-# TO-DO:
-# Add option to select yearly or daily profile
-# Aggregate load profiles to higher voltage levels
-# Add selection of voltage level / average power
-# Deal with generation
-# Add option to randomize load curves slightly?
