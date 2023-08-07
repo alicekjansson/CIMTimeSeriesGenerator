@@ -14,7 +14,7 @@ def forb():
     smahus=np.mean([6311,24166,20247,23456,23994,35254,18859,23927,30699,21951,22016,44637,21217])
     flerbostad=np.mean([187226,144237])
     industri=np.mean([102028,135285,169029,96287])
-    medelforb=[smahus,smahus,flerbostad,industri]
+    medelforb=[smahus,flerbostad,industri,smahus]
     return medelforb
 
 # Temperaturberoende
@@ -22,7 +22,7 @@ def tempberoende():
     smahus=np.mean([0.668,0.758,0.713,0.620,0.726,0.675,0.346,0.614,0.790,0.333,0.728,0.525])
     flerbostad=0.08*0.645 #Only 8% of apartment buildings heated with electricity
     industri=0.578  #Minre industri med elvärme
-    medel=[smahus,0.238,flerbostad,industri]
+    medel=[smahus,flerbostad,industri,0.238]
     return medel
 
 # Graddagar, SE1-SE4
@@ -56,7 +56,7 @@ def load_df():
     df4.index=df4['Hour']
     df4=df4.drop('Hour',axis=1).transpose()
     df4=df4*100
-    return [df1,df2,df3,df4],[std1,std2,std3]
+    return [df1,df3,df4,df2],[std1,std3,0,std2]
 
 #Returns chosen load curve
 def choose_curve(df,typ,elomr,arstid,dag):
@@ -143,17 +143,44 @@ def generate_timeseries(typ,elomr,arstid,dag,plot):
 
 def aggregate(typ,elomr,arstid,dag,N):
     #Sammanlagringsfaktor
-    S=[0.81,0.59,0.6,0.76]
+    S=[0.81,0.6,0.76,0.59]
+    andel_elvarme=0.3       #Cirka 30% av småhus uppvärmda med elvärme enligt Energimyndighetens statistik 2021
     Pall=pd.DataFrame()
-    for i in range(N):
-        P=generate_timeseries(typ,elomr,arstid,dag,False)
-        Pall[i]=P
-    Ptot=Pall.sum(axis=1)
-    PtotS=Ptot*S[typ]
+    #Apartment or Industry
+    if typ!=0:
+        for i in range(N):
+            P=generate_timeseries(typ,elomr,arstid,dag,False)
+            Pall[i]=P
+        Ptot=Pall.sum(axis=1)
+        #If more than one object, add aggregation factor
+        if N!=1:
+            Ptot=Ptot*S[typ]
+    #Houses (both with and w/o electric heating)
+    else:
+        N_el=int(andel_elvarme*N)
+        N_other=N-N_el
+        for i in range(N_el):
+            P=generate_timeseries(3,elomr,arstid,dag,False)
+            Pall[i]=P
+        Ptot=Pall.sum(axis=1)
+        #If more than one object, add aggregation factor
+        if N!=1:
+            Ptot=Ptot*S[3]
+        Pall=pd.DataFrame()
+        for i in range(N_other):
+            P=generate_timeseries(0,elomr,arstid,dag,False)
+            Pall[N_el+i]=P
+        Ptot2=Pall.sum(axis=1)
+        #If more than one object, add aggregation factor
+        if N!=1:
+            Ptot2=Ptot2*S[0]
+        Ptot=Ptot+Ptot2         #Add load from both house types
+    
+    
     fig,ax=plt.subplots(1,figsize=[8,4])
-    PtotS.plot(ax=ax)
+    Ptot.plot(ax=ax)
     ax.set_xlabel('Hour')
     ax.set_ylabel('Total consumption (kW)')
-    dwellings=['Småhus Direktel','Småhus Hushållsel','Lägenhet','Industri']
-    ax.set_title('Aggregated load of ' + str(N) + ' x ' + str(dwellings[typ]))
-    return PtotS
+    dwellings=['Småhus','Lägenhet','Industri']
+    ax.set_title('Aggregated load')
+    return Ptot

@@ -11,22 +11,38 @@ import numpy as np
 from alice_func import aggregate
 import PySimpleGUI as sg
 
-#Create GUI
-sg.theme('DarkTeal4')
+# Check themes
+# sg.theme_previewer()
+
+sg.theme('LightGreen5')
+layout1 = [
+    [sg.Text("#Houses:")],
+    [sg.Input('100',key='nbr_house')],
+    [sg.Text('Choose bidding area:')],
+    [sg.Combo(['SE1','SE2','SE3','SE4'],key='ZONE',enable_events=True,default_value='SE4',size=[10,10])],
+]
+layout2 = [
+    [sg.Text("#Apartment buildings:")],
+    [sg.Input('100',key='nbr_apartm')],
+    [sg.Text('Choose season:')],
+    [sg.Combo(['Winter','Autumn/Spring','Summer'],key='SEASON',enable_events=True,default_value='Winter')],
+]
+layout3 = [
+    [sg.Text("#Industry:")],
+    [sg.Input('100',key='nbr_industry')],
+    [sg.Text('Choose day:')],
+    [sg.Combo(['Weekday','Weekend'],key='DAY',enable_events=True,default_value='Weekday')],
+]
+
 layout = [[sg.Text('Time Series Generator',font=('Helvetica',30))],
-          [sg.Text('Choose dwelling:')],
-          [sg.Combo(['Småhus Direktel','Småhus Hushållsel','Lägenhet','Industri'],key='TYP',enable_events=True,default_value='Småhus Direktel')],
-          [sg.Text('Choose number of objects:')],
-          [sg.Input('100',key='nbr_objects',size=(5, 1))],
-          [sg.Text('Choose bidding area:')],
-          [sg.Combo(['SE1','SE2','SE3','SE4'],key='ZONE',enable_events=True,default_value='SE4')],
-          [sg.Text('Choose season:')],
-          [sg.Combo(['Winter','Autumn/Spring','Summer'],key='SEASON',enable_events=True,default_value='Winter')],
-          [sg.Text('Choose day:')],
-          [sg.Combo(['Weekday','Weekend'],key='DAY',enable_events=True,default_value='Weekday')],
+          [sg.Text('Choose dwellings:')],
+          [sg.Column(layout1,size=[150,150]),
+           sg.Column(layout2,size=[150,150]),
+           sg.Column(layout3,size=[150,150]),],
           [sg.Text('CSV Name', size=(12, 1)), sg.Input(key='Name')],
           [sg.Text('CSV Location', size=(12, 1)), sg.Input('C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/Generated_csv',key='loc'), sg.FolderBrowse()],
-          [sg.Submit('Only Generate Timeseries'),sg.Submit('Generate and Save as CSV'),sg.Exit()]]
+          [sg.Submit('Only Generate Timeseries'),sg.Submit('Generate and Save as CSV'),sg.Exit()]
+          ]
 
 # Create the window
 window = sg.Window('Load Timeseries Generator', layout)
@@ -44,10 +60,12 @@ window = sg.Window('Load Timeseries Generator', layout)
 # 0 Vardag
 # 1 Helg och helgdag
 
-dwellings=['Småhus Direktel','Småhus Hushållsel','Lägenhet','Industri']
+dwellings=['Småhus','Lägenhet','Industri']
+types=['Småhus Direktel','Småhus Hushållsel','Lägenhet','Industri']
 bids=['SE1','SE2','SE3','SE4']
 seasons=['Winter','Autumn/Spring','Summer']
 days=['Weekday','Weekend']
+
 
 # Run GUI
 while True:
@@ -55,11 +73,11 @@ while True:
     # End program if user closes window
     if event == "Exit" or event == sg.WIN_CLOSED:
         break
-    if values['TYP']:
-        choice=values['TYP']                # Get user choice
-        for i,d in enumerate(dwellings):    # Get user choice in int form
-            if choice == d:
-                typ=i                       # Update house dwelling type
+    # if values['TYP']:
+    #     choice=values['TYP']                # Get user choice
+    #     for i,d in enumerate(dwellings):    # Get user choice in int form
+    #         if choice == d:
+    #             typ=i                       # Update house dwelling type
     if values['ZONE']:
         choice=values['ZONE']                # Get user choice
         for i,d in enumerate(bids):
@@ -75,39 +93,33 @@ while True:
         for i,d in enumerate(days):
             if choice == d:
                 dag=i
-    if event == 'Only Generate Timeseries':
-        #Add check for if not all categories are defined by user
-        if not ( values['TYP'] and values['SEASON']and values['ZONE'] and values['DAY']):
-            sg.popup('Not all user input defined')
-        else:
-            try:
-                N=int(values['nbr_objects'])
-                PtotS=aggregate(typ,elomr,arstid,dag,N)
-                break
-            except ValueError:
-                sg.popup('Please enter integer nbr of objects')
-    if event == 'Generate and Save as CSV':
-        #Add check for if not all categories are defined by user
-        if not ( values['TYP'] and values['SEASON']and values['ZONE'] and values['DAY']):
-            sg.popup('Not all user input defined')
-        elif not ( values['Name'] and values['loc']):
-            sg.popup('CSV name or location not defined')
-        else:
-            try:
-                N=int(values['nbr_objects'])
-                PtotS=aggregate(typ,elomr,arstid,dag,N)
-                name=values['Name']
-                loc=values['loc']
-                csv_loc=str(loc)+'/'+str(name)+'.csv'
-                PtotS.to_csv(csv_loc)
-                break
-            except ValueError:
-                sg.popup('Please enter integer nbr of objects')
+    for n,gen in enumerate(['Only Generate Timeseries','Generate and Save as CSV']):
+        if event == gen:
+            for i,nbr in enumerate(['nbr_house','nbr_apartm','nbr_industry']):
+                typ=i
+                #Add check for if not all categories are defined by user
+                if not ( values['SEASON']and values['ZONE'] and values['DAY']):
+                    sg.popup('Not all user input defined')
+                else:
+                    try:
+                        N=int(values[nbr])
+                        PtotS=aggregate(typ,elomr,arstid,dag,N)
+                        if n==0:
+                            window.close()
+                        if n == 1:
+                            if not ( values['Name'] and values['loc']):
+                                sg.popup('CSV name or location not defined')
+                            else:
+                                name=values['Name']
+                                loc=values['loc']
+                                csv_loc=str(loc)+'/'+str(name)+'.csv'
+                                PtotS.to_csv(csv_loc)
+                                window.close()
+                    except ValueError:
+                        sg.popup('Please enter integer nbr of objects')
+                        break
             
-            break
-
-window.close()
-
+window.close()        
 
 # TO-DO:
 # Add option to select yearly or daily profile
