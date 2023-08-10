@@ -7,7 +7,6 @@ Created on Wed Jul  5 09:29:40 2023
 
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
 from alice_func import aggregate
 import PySimpleGUI as sg
 
