@@ -16,7 +16,7 @@ import PySimpleGUI as sg
 sg.theme('LightGreen5')
 layout1 = [
     [sg.Text("#Houses:")],
-    [sg.Input('1000',key='nbr_house')],
+    [sg.Input('100',key='nbr_house')],
     [sg.Text('Choose bidding area:')],  
     [sg.Combo(['SE1','SE2','SE3','SE4'],key='ZONE',enable_events=True,default_value='SE4',size=[10,10])],
 ]
