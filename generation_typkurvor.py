@@ -8,19 +8,25 @@ Created on Thu Aug 10 11:20:54 2023
 import pandas as pd
 import matplotlib.pyplot as plt
 import PySimpleGUI as sg
+from scipy.stats import norm
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 # Import data for SE4
 df=pd.read_csv(r'C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/SVK-Data/all_years.csv',sep=',').iloc[:,1:]
 
 # Aggregate based on defined time = hour and cat = generation category
-def aggregate(df,time,cat):
+def aggregate(df,time,cat,scale):
     year=df.groupby(time).agg('mean')
-    yearstd=df.groupby(time).agg('std')
     yearly_profile=pd.DataFrame()
-    for col in [el for el in df.columns if cat in el]:
-        yearly_profile[col] = year[col]
-        yearly_profile[str(col) +' Upper'] = year[col]+yearstd[col]
-        yearly_profile[str(col) +' Lower'] = year[col]-yearstd[col]
+    original_scale=year[cat].max()
+    scaling=scale/original_scale
+    yearly_profile[cat] = [el*scaling for el in year[cat]]
+    yearstd=(df[cat]*scaling).std()
+    variation=norm.rvs(0,yearstd,size=1)[0]
+    yearly_profile[str(cat) +' Upper'] = yearly_profile[cat]+yearstd
+    yearly_profile[str(cat) +' Lower'] = yearly_profile[cat]-yearstd
+    yearly_profile[str(cat) +' Selected'] = yearly_profile[cat]+variation
     return yearly_profile
 
 # Plot average, average +- std of one generation type in one bidding area
@@ -29,6 +35,7 @@ def plot(profile,se,title):
     profile[str(se) + ' Upper'].plot(ax=ax,label='Upper')
     profile[str(se)].plot(ax=ax,label='Mean')
     profile[str(se) + ' Lower'].plot(ax=ax,label='Lower')
+    profile[str(se) + ' Selected'].plot(ax=ax,label='Selection')
     ax.set_ylabel('Consumption [MW]')
     ax.set_title(title)
     plt.xticks(rotation=45)
@@ -47,6 +54,8 @@ days=['Weekday','Weekend']
 layout = [[sg.Text('Time Series Generator',font=('Helvetica',30))],
           [sg.Text('Choose generation type:')],
           [sg.Combo(['Hydro','Wind','PV','CHP','Nuclear'],key='GEN',enable_events=True,default_value='Hydro')],
+          [sg.Text('Choose unit size:')],
+          [sg.Input('5',key='SIZE',size=[10,10]),sg.Text('MW')],
           [sg.Text('Choose bidding area:')],  
           [sg.Combo(['SE1','SE2','SE3','SE4'],key='ZONE',enable_events=True,default_value='SE4',size=[10,10])],
           [sg.Text('Choose day:')],
@@ -79,11 +88,16 @@ while True:
             if (gen == 'Nuclear') and (zone != 'SE3'):
                 sg.popup('Nuclear power exists only in SE3')
                 break
-            profile=aggregate(df,'Hour',gen)
-            plot(profile,str(gen + ' ' +zone),str(gen + ' ' +zone))
-            if n==0:
+            try:
+                size=float(values['SIZE'])
+                profile=aggregate(df,'Hour',str(gen + ' ' +zone),size)
+                plot(profile,str(gen + ' ' +zone),str(gen + ' ' +zone))
+            except ValueError:
+                sg.popup('Please enter valid size of generating unit')
+                break
+            if n==0:    #Only show time series
                 window.close()
-            if n == 1:
+            if n == 1:  #Show and save as csv
                 if not ( values['Name'] and values['loc']):
                     sg.popup('CSV name or location not defined')
                 else:
@@ -93,8 +107,3 @@ while True:
                     profile[str(gen + ' ' +zone)].to_csv(csv_loc)
                     window.close()
 window.close()        
-
-
-# hydro=aggregate(df,'Hour','Hydro')
-# plot_single(hydro,'Hydro SE4','Hydro SE4')
-# plot(hydro,'Hydro')
