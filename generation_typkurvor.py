@@ -104,6 +104,6 @@ while True:
                     name=values['Name']
                     loc=values['loc']
                     csv_loc=str(loc)+'/'+str(name)+'.csv'
-                    profile[str(gen + ' ' +zone)].to_csv(csv_loc)
+                    profile[str(gen + ' ' +zone+ ' Selected')].to_csv(csv_loc)
                     window.close()
 window.close()        
