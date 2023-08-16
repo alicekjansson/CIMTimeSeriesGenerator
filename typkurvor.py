@@ -39,7 +39,7 @@ layout = [[sg.Text('Time Series Generator',font=('Helvetica',30))],
            sg.Column(layout2,size=[150,150]),
            sg.Column(layout3,size=[150,150]),],
           [sg.Text('CSV Name', size=(12, 1)), sg.Input(key='Name')],
-          [sg.Text('CSV Location', size=(12, 1)), sg.Input('C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/Generated_csv',key='loc'), sg.FolderBrowse()],
+          [sg.Text('CSV Location', size=(12, 1)), sg.Input('./Generated_csv',key='loc'), sg.FolderBrowse()],
           [sg.Submit('Only Generate Timeseries'),sg.Submit('Generate and Save as CSV'),sg.Exit()]
           ]
 

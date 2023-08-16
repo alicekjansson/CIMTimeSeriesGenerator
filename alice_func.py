@@ -37,22 +37,22 @@ def graddagar():
 # Import standard load curves
 # För småhus är vanligaste uppvärmningssätt el, antingen direktverkande eller luftvärmepump. Även endast hushållsel tittas på (t.ex. fjärrvärme)
 def load_df():
-    df1=pd.read_csv(r'C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/Typkurvor/typkurvor_direktel.csv',delimiter=';')
+    df1=pd.read_csv(r'./Typkurvor/typkurvor_direktel.csv',delimiter=';')
     df1.index=df1['Hour']
     df1=df1.drop('Hour',axis=1)
     std1=df1[df1.index.str.contains('std')].transpose() #Save standard deviation data
     df1=df1[~df1.index.str.contains('std')].transpose() #Remove standard deviation data
-    df2=pd.read_csv(r'C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/Typkurvor/typkurvor_hushallsel.csv',delimiter=';')
+    df2=pd.read_csv(r'./Typkurvor/typkurvor_hushallsel.csv',delimiter=';')
     df2.index=df2['Hour']
     df2=df2.drop('Hour',axis=1)
     std2=df2[df2.index.str.contains('std')].transpose() #Save standard deviation data
     df2=df2[~df2.index.str.contains('std')].transpose() #Remove standard deviation data
-    df3=pd.read_csv(r'C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/Typkurvor/typkurvor_lagenhet.csv',delimiter=';')
+    df3=pd.read_csv(r'./Typkurvor/typkurvor_lagenhet.csv',delimiter=';')
     df3.index=df3['Hour']
     df3=df3.drop('Hour',axis=1)
     std3=df3[df3.index.str.contains('std')].transpose() #Save standard deviation data
     df3=df3[~df3.index.str.contains('std')].transpose() #Remove standard deviation data
-    df4=pd.read_csv(r'C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/Typkurvor/typkurvor_industri.csv',delimiter=';')
+    df4=pd.read_csv(r'./Typkurvor/typkurvor_industri.csv',delimiter=';')
     df4.index=df4['Hour']
     df4=df4.drop('Hour',axis=1).transpose()
     df4=df4*100
