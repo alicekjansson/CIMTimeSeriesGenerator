@@ -38,16 +38,7 @@ load_right = [
    orientation='horizontal', key='DWELLINGS')]  
 ]
 
-gens=[1,2,3,4]
-gen_left = [
-    [sg.Text("Generators")],
-    [sg.Listbox(gens,key='GENS',size=[100,50])],
-]
-all_gen=['Hydro','Wind','PV','CHP','Nuclear']
-gen_right = [
-    [sg.Text("Select generator type:")],
-    [sg.Listbox(all_gen,key='GENS',size=[100,50])],  
-]
+
 
 
 layout = [[sg.Text('Time Series Generator',font=('Helvetica',30))],
@@ -59,10 +50,6 @@ layout = [[sg.Text('Time Series Generator',font=('Helvetica',30))],
           [sg.Column(load_left,size=[200,150]),
            sg.VerticalSeparator(),
            sg.Column(load_right,size=[200,150])],
-          [sg.HorizontalSeparator()],
-          [sg.Column(gen_left,size=[200,150]),
-           sg.VerticalSeparator(),
-           sg.Column(gen_right,size=[200,150])],
           [sg.HorizontalSeparator()],
           [sg.Submit('OK and return'),sg.Exit()]
           ]
