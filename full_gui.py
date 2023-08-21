@@ -12,8 +12,6 @@ import PySimpleGUI as sg
 
 sg.theme('LightGreen5')
 
-
-
 col1 = [
     [sg.Text('Choose bidding area:')],  
     [sg.Combo(['SE1','SE2','SE3','SE4'],key='ZONE',enable_events=True,default_value='SE4',size=(10, 1))],  
@@ -30,12 +28,12 @@ col3 = [
 loads=[1,2,3,4]
 load_left = [
     [sg.Text("Loads")],
-    [sg.Listbox(loads,key='LOADS',size=[100,50])],
+    [sg.Listbox(loads,key='LOADS',size=[100,50],enable_events=True)],
 ]
-r1=sg.Radio('Average','load',default=True)
-r2=sg.Radio('Urban area','load')
-r3=sg.Radio('Rural area','load')
-r4=sg.Radio('Industrial area','load')
+r1=sg.Radio('Average','load',default=True,enable_events=True)
+r2=sg.Radio('Urban area','load',enable_events=True)
+r3=sg.Radio('Rural area','load',enable_events=True)
+r4=sg.Radio('Industrial area','load',enable_events=True)
 load_right = [
     [sg.Text("Select load case")],
     [r1],
@@ -43,9 +41,6 @@ load_right = [
     [r3],
     [r4]
 ]
-
-
-
 
 layout = [[sg.Text('Time Series Generator',font=('Helvetica',30))],
           [sg.HorizontalSeparator()],
@@ -62,11 +57,28 @@ layout = [[sg.Text('Time Series Generator',font=('Helvetica',30))],
 
 # Create the window
 window = sg.Window('Load Timeseries Generator', layout)
-
+bids=['SE1','SE2','SE3','SE4']
+seasons=['Winter','Autumn/Spring','Summer']
+days=['Weekday','Weekend']
 
 while True:
     event, values = window.read()
     # End program if user closes window
     if event == "Exit" or event == sg.WIN_CLOSED:
         break
+    if values['ZONE']:
+        choice=values['ZONE']                # Get user choice
+        for i,d in enumerate(bids):
+            if choice == d:
+                elomr=i+1
+    if values['SEASON']:
+        choice=values['SEASON']                # Get user choice
+        for i,d in enumerate(seasons):
+            if choice == d:
+                arstid=i
+    if values['DAY']:
+        choice=values['DAY']                # Get user choice
+        for i,d in enumerate(days):
+            if choice == d:
+                dag=i
 window.close()  
