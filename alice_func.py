@@ -121,7 +121,7 @@ def generate_timeseries(typ,elomr,arstid,dag,plot):
     # Graddagar, SE1-SE4
     graddag=graddagar()
     # Calculate normalized annual energy and average load
-    Ean=medelforb[typ]*(1+(psi[typ]*((graddag[elomr-1])/3978)-1))
+    Ean=medelforb[typ]*(1+(psi[typ]*((graddag[elomr-1]/3978)-1)))
     Pav=Ean/8760
     # Import standard load curves
     # För småhus är vanligaste uppvärmningssätt el, antingen direktverkande eller luftvärmepump. Även endast hushållsel tittas på (t.ex. fjärrvärme)
@@ -145,34 +145,45 @@ def aggregate(typ,elomr,arstid,dag,N):
     #Sammanlagringsfaktor
     S=[0.81,0.6,0.76,0.59]
     andel_elvarme=0.3       #Cirka 30% av småhus uppvärmda med elvärme enligt Energimyndighetens statistik 2021
-    Pall=pd.DataFrame(columns=[i for i in range(N)])
     #Apartment or Industry
     if typ!=0:
-        for i in range(N):
-            P=generate_timeseries(typ,elomr,arstid,dag,False)
-            Pall=pd.concat([Pall,P],axis=1)
-        Ptot=Pall.sum(axis=1)
-        #If more than one object, add aggregation factor
-        if N!=1:
-            Ptot=Ptot*S[typ]
+        P=generate_timeseries(typ,elomr,arstid,dag,False)
+        Ptot=P*S[typ]*N
     #Houses (both with and w/o electric heating)
     else:
         N_el=int(andel_elvarme*N)
         N_other=N-N_el
-        for i in range(N_el):
-            P=generate_timeseries(3,elomr,arstid,dag,False)
-            Pall=pd.concat([Pall,P],axis=1)
-        Ptot=Pall.sum(axis=1)
-        #If more than one object, add aggregation factor
-        if N!=1:
-            Ptot=Ptot*S[3]
-        Pall=pd.DataFrame()
-        for i in range(N_other):
-            P=generate_timeseries(0,elomr,arstid,dag,False)
-            Pall=pd.concat([Pall,P],axis=1)
-        Ptot2=Pall.sum(axis=1)
-        #If more than one object, add aggregation factor
-        if N!=1:
-            Ptot2=Ptot2*S[0]
+        P=generate_timeseries(3,elomr,arstid,dag,False)
+        Ptot=P*S[3]*N_el
+        P2=generate_timeseries(0,elomr,arstid,dag,False)
+        Ptot2=P2*S[0]*N_other
         Ptot=Ptot+Ptot2         #Add load from both house types
     return Ptot
+
+
+p_scale=100
+dwellings1=[0.94,0.03,0.03]
+dwellings2=[0.69,0.30,0.01]
+dwellings3=[0.96,0.01,0.03]
+dwellings4=[0.88,0.02,0.10]
+
+#Decide type
+dw=dwellings1
+#Calculate load for each
+P=[i*p_scale for i in dw]
+mean=[]
+for typ in [0,1,2]:
+    series=generate_timeseries(typ,4,0,0,False)
+    mean.append(series.mean().iloc[0])
+    
+    
+# print(mean)
+
+# medelforb=forb()
+# psi=tempberoende()
+# graddag=graddagar()
+# elomr=1
+# eans=[]
+# for typ in [0,1,2]:
+#     eans.append(medelforb[typ]*(1+(psi[typ]*((graddag[elomr-1]/3978)-1))))
+#     print((1+(psi[typ]*((graddag[elomr-1]/3978)-1))))
