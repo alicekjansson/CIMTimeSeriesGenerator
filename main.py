@@ -206,7 +206,7 @@ def start_gui():
                 
            
                 # generate cim file
-                cim_timeseries(eq, eq_xml, ns_dict, ns_register, loads, gens, indata)
+                cim_timeseries(eq, eq_xml, ns_dict, ns_register, loads, gens)
 
                 break
        
