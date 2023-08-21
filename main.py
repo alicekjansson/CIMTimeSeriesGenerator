@@ -204,7 +204,7 @@ def start_gui():
                 # register namspaces for printing in output (see function)
                 ns_register = register_all_namespaces(eq_file)
                 
-               np.random.rand
+           
                 # generate cim file
                 cim_timeseries(eq, eq_xml, ns_dict, ns_register, loads, gens, indata)
 
