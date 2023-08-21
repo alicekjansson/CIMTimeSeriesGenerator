@@ -32,10 +32,16 @@ load_left = [
     [sg.Text("Loads")],
     [sg.Listbox(loads,key='LOADS',size=[100,50])],
 ]
+r1=sg.Radio('Average','load',default=True)
+r2=sg.Radio('Urban area','load')
+r3=sg.Radio('Rural area','load')
+r4=sg.Radio('Industrial area','load')
 load_right = [
-    [sg.Text("Select % industrial load:")],
-    [sg.Slider(range=(0, 100), default_value=12, enable_events=True,
-   orientation='horizontal', key='DWELLINGS')]  
+    [sg.Text("Select load case")],
+    [r1],
+    [r2],
+    [r3],
+    [r4]
 ]
 
 
