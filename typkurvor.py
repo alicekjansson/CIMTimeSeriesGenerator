@@ -126,7 +126,5 @@ while True:
                     csv_loc=str(loc)+'/'+str(name)+'.csv'
                     P_tot.to_csv(csv_loc)
                     window.close()
-            
-            
 window.close()        
 

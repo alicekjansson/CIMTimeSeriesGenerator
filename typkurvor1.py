@@ -105,11 +105,11 @@ while True:
                 typ=i
                 N=int(nbr*P_scale)
                 P_tot.append(aggregate(typ,elomr,arstid,dag,N))
-            P_tot=pd.DataFrame(P_tot).sum()
+            P_tot=(P_tot[0]+P_tot[1]+P_tot[2])/1000
             fig,ax=plt.subplots(1,figsize=[8,4])
             P_tot.plot(ax=ax)
             ax.set_xlabel('Hour')
-            ax.set_ylabel('Total consumption (kW)')
+            ax.set_ylabel('Total consumption (MW)')
             dwellings=['Småhus','Lägenhet','Industri']
             ax.set_title('Aggregated load')
             if n==0:
