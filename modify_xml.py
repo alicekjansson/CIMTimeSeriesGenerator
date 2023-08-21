@@ -12,8 +12,6 @@ import xml.etree.ElementTree as ET
 from import_cim import data_extract
 from xml_functions import conform_load_converter, load_ts2cim, gen_opsch2cim, gen_mea2cim, write_output
 
-
-
 def cim_timeseries(eq, eq_xml, ns_dict, ns_register, loads, gens, indata = 0):
     
     #---LOADS---

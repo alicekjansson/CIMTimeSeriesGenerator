@@ -11,7 +11,7 @@ from alice_func import aggregate
 import PySimpleGUI as sg
 
 # Check themes
-# sg.theme_previewer()
+#sg.theme_previewer()
 
 sg.theme('LightGreen5')
 layout1 = [

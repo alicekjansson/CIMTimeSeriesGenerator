@@ -39,8 +39,10 @@ class Loads(GridObjects):
         
 class Generators(GridObjects):
     
-    def __init__(self,eq,ssh,ns, element_type):
+    def __init__(self,eq,ssh,ns, element_type, gen_type):
         super().__init__(eq, ssh, ns, element_type)
+        
+        self.gen_type = gen_type
         
         init_p = []
         nom_p = []
@@ -58,3 +60,4 @@ class Generators(GridObjects):
         self.df['nom_p']=nom_p
         self.df['max_p']=max_p
         self.df['min_p']=min_p
+        
