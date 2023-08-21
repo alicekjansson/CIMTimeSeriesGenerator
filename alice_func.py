@@ -160,30 +160,24 @@ def aggregate(typ,elomr,arstid,dag,N):
         Ptot=Ptot+Ptot2         #Add load from both house types
     return Ptot
 
-
-p_scale=100
+#Decide type
 dwellings1=[0.94,0.03,0.03]
 dwellings2=[0.69,0.30,0.01]
 dwellings3=[0.96,0.01,0.03]
 dwellings4=[0.88,0.02,0.10]
 
-#Decide type
-dw=dwellings1
-#Calculate load for each
-P=[i*p_scale for i in dw]
-mean=[]
-for typ in [0,1,2]:
-    series=generate_timeseries(typ,4,0,0,False)
-    mean.append(series.mean().iloc[0])
-    
-    
-# print(mean)
+share=dwellings1
 
-# medelforb=forb()
-# psi=tempberoende()
-# graddag=graddagar()
-# elomr=1
-# eans=[]
-# for typ in [0,1,2]:
-#     eans.append(medelforb[typ]*(1+(psi[typ]*((graddag[elomr-1]/3978)-1))))
-#     print((1+(psi[typ]*((graddag[elomr-1]/3978)-1))))
+def calculate_N(P_scale,share):
+    mean=[]
+    for typ in [0,1,2]:
+        series=generate_timeseries(typ,4,0,0,False)
+        mean.append(series.mean().iloc[0])
+    #Solve equation system
+    a = np.array([[mean[0], mean[1],mean[2]], [1-share[0], -share[0],-share[0]],[-share[1],1-share[1],-share[1]]])
+    b = np.array([P_scale, 0,0])
+    x = np.linalg.solve(a, b)
+    x= [round(el) for el in x]
+    return x
+
+x=calculate_N(200,share)
