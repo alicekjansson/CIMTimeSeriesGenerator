@@ -10,7 +10,7 @@ import numpy as np
 import PySimpleGUI as sg
 import xml.etree.ElementTree as ET
 from import_cim import data_extract
-from xml_functions import register_all_namespaces
+from xml_functions import register_all_namespaces, write_output
 from modify_xml import cim_timeseries
 
 ns_dict = {'cim':'http://iec.ch/TC57/2013/CIM-schema-cim16#',
@@ -48,18 +48,18 @@ def resource_data_window(loads, gens, gen_texts):
                 
             
     layout1 = [[sg.Text("Loads")],
-              [sg.Listbox(load_names, select_mode=sg.LISTBOX_SELECT_MODE_SINGLE, size =(20, 5), key ='load')],
+              [sg.Listbox(load_names, select_mode=sg.LISTBOX_SELECT_MODE_SINGLE, enable_events=True, size =(20, 5), key ='load')],
               [sg.Text('Generators')],
               [sg.Text(gen_texts[0])],
-              [sg.Listbox(pv_names, select_mode=sg.LISTBOX_SELECT_MODE_SINGLE, size =(20, 5), key ='pv')],
+              [sg.Listbox(pv_names, select_mode=sg.LISTBOX_SELECT_MODE_SINGLE, enable_events=True, size =(20, 5), key ='0pv')],
               [sg.Text(gen_texts[1])],
-              [sg.Listbox(hydro_names, select_mode=sg.LISTBOX_SELECT_MODE_SINGLE, size =(20, 5), key ='hy')],
+              [sg.Listbox(hydro_names, select_mode=sg.LISTBOX_SELECT_MODE_SINGLE, enable_events=True, size =(20, 5), key ='1hy')],
               [sg.Text(gen_texts[2])],
-              [sg.Listbox(wp_names, select_mode=sg.LISTBOX_SELECT_MODE_SINGLE, size =(20, 5), key ='wp')],
+              [sg.Listbox(wp_names, select_mode=sg.LISTBOX_SELECT_MODE_SINGLE, enable_events=True, size =(20, 5), key ='2wp')],
               [sg.Text(gen_texts[3])],
-              [sg.Listbox(chp_names, select_mode=sg.LISTBOX_SELECT_MODE_SINGLE, size =(20, 5), key ='chp')],
+              [sg.Listbox(chp_names, select_mode=sg.LISTBOX_SELECT_MODE_SINGLE, enable_events=True, size =(20, 5), key ='3chp')],
               [sg.Text(gen_texts[4])],
-              [sg.Listbox(nucl_names, select_mode=sg.LISTBOX_SELECT_MODE_SINGLE, size =(20, 5), key ='nucl')]
+              [sg.Listbox(nucl_names, select_mode=sg.LISTBOX_SELECT_MODE_SINGLE, enable_events=True, size =(20, 5), key ='4nucl')]
               ]
     
     print_window = sg.MLine(size=(50,10), key='print')
@@ -73,10 +73,8 @@ def resource_data_window(loads, gens, gen_texts):
     
     window2 = sg.Window("Resource data viewer", layout, finalize=True)
     
-    if window2['load']:
-        print(window2['load'])
               
-    return window2
+    return window2, print
 
 
 
@@ -109,6 +107,8 @@ def start_window(gen_texts):
               [sg.Radio('Thermal/CHP plants (default)','def_plant',key='rd_chp'),
                sg.Radio('Nuclear plants','def_plant',key='rd_nucl'),],
               [sg.Button('View resource data', key = 'open')],
+              [sg.Text('Save new CIM (EQ) file as', size=(19, 1)), sg.Input('output_EQ',key='Name',size=(40, 1))],
+              [sg.Text('Output folder', size=(19, 1)), sg.Input(key='loc',size=(40, 1)), sg.FolderBrowse()],
               [sg.Submit('Generate timeseries', key='run'),
                sg.Exit()]
               ]
@@ -180,7 +180,46 @@ def start_gui():
                         undef_gens.gen_type = "CHP"
                     if values['rd_nucl']:
                         undef_gens.gen_type = "NUCLEAR"
-                window2 = resource_data_window(loads, gens, gen_texts)
+                window2, print = resource_data_window(loads, gens, gen_texts)
+        
+        elif event == 'load':
+            selection = values[event]
+            if selection:
+                window2['print'].update('')
+                item = selection[0]
+                print('Name = ' + item)
+                for index, load in loads.df.iterrows():
+                    if item == load['name']:
+                        load_p = round(float(load['p']),2)
+                        print('Active Power = '+ str(load_p) + ' MW')
+                        pf = round(np.cos(np.arctan(float(load['q'])/float(load['p']))),2)
+                        print('Power Factor = '+ str(pf))
+                        
+        elif event == '0pv' or  event == '1hy' or event == '2wp' or event == '3chp' or event == '4nucl':
+            selection = values[event]
+            if selection:
+                window2['print'].update('')
+                item = selection[0]
+                print('Name = ' + item)
+                
+                if gens[int(event[0])]:
+                    for index, gen in gens[int(event[0])].df.iterrows():
+                        if item == gen['name']:
+                            gen_p = round(float(gen['init_p']),2)
+                            max_p = round(float(gen['max_p']),2)
+                            print('Active Power = '+ str(gen_p) + ' MW')
+                            print('Maximum Operating Power = '+ str(max_p)+ ' MW')
+                            
+                # #undefined generators
+                if gens[-1]:
+                    for index, gen in gens[-1].df.iterrows():
+                        if item == gen['name']:
+                            gen_p = round(float(gen['init_p']),2)
+                            max_p = round(float(gen['max_p']),2)
+                            print('Active Power = '+ str(gen_p) + ' MW')
+                            print('Maximum Operating Power = '+ str(max_p)+ ' MW')
+                
+                
                
 
          # generate timeseries       
@@ -190,25 +229,39 @@ def start_gui():
                 
                 
                 #TIMESERIES DATA
-                # timesteps = 24
-                # tstep_length = 3600 # unit seconds
-                # for load in loads:    
-                #     load.ts_p = np.random.rand(timesteps)
-                #     load.ts_qw= np.random.rand(timesteps)
+                timesteps = 24
+                tstep_length = 3600 # unit seconds
                 
-                # for gen in gens:
-                #     if gen:
-                #         for unit in gen:
-                            
+                if loads:    
+                    loads.ts_p = np.random.rand(timesteps, loads.df['ID'].size)
+                    loads.ts_q= np.random.rand(timesteps, loads.df['ID'].size)
+                
+                for gen in gens[0:-1]:
+                    if gen:
+                        gen.ts_p = np.random.rand(timesteps, gen.df['ID'].size)
+                # undefined generators
+                if gens[-1]:
+                        gens[-1].ts_p = np.random.rand(timesteps, gens[-1].df['ID'].size)
                 
                 # register namspaces for printing in output (see function)
                 ns_register = register_all_namespaces(eq_file)
                 
            
-                # generate cim file
-                cim_timeseries(eq, eq_xml, ns_dict, ns_register, loads, gens)
-
-                break
+                # generate cim data
+                eq_xml = cim_timeseries(eq, eq_xml, ns_dict, ns_register, loads, gens, timesteps, tstep_length)
+                
+                # genterate new xml file
+                if not ( values['Name'] and values['loc']):
+                    sg.popup('Output file name or location not defined')
+                else:
+                    xml_name=values['Name']
+                    loc = '.'
+                    if values['loc']:
+                        loc=values['loc']
+                    xml_file=str(loc)+'/'+str(xml_name)+'.xml'
+                    write_output(eq_xml, xml_file)
+                    window.close()
+                    break
        
             
     window.close()
