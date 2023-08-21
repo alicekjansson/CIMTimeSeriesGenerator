@@ -28,7 +28,7 @@ def conform_load_converter(eq, ns, loads):
     
 
     
-def load_ts2cim(eq, ns_dict, ns_register, loads, p, q, timesteps, tstep_length):    
+def load_ts2cim(eq, ns_dict, ns_register, loads, timesteps, tstep_length):    
     #---iterate here to make one load group + schedule for every load
     grp_id_no = 0
     for load_element in eq.findall('cim:'+'ConformLoad',ns_dict): # find all ConformLoads and verify that they are the right ones (now df straight from cim import)
@@ -48,7 +48,7 @@ def load_ts2cim(eq, ns_dict, ns_register, loads, p, q, timesteps, tstep_length):
             
             for seq_no in range(timesteps):
                 tp_id = sch_id + '_' + 'tp_id' + str(tp_id_no)
-                load_timepoint(eq, ns_register, sch_id, tp_id, seq_no, p[seq_no, grp_id_no], q[seq_no, grp_id_no])
+                load_timepoint(eq, ns_register, sch_id, tp_id, seq_no, loads.ts_p[seq_no, grp_id_no], loads.ts_q[seq_no, grp_id_no])
 
                 tp_id_no+=1
                 
@@ -106,7 +106,7 @@ def load_timepoint(eq, ns, sch_id, tp_id, seq_no, p, q):
     
 
 ##---GENERATORS (Unit commitment timeseries)---
-def gen_opsch2cim(eq, ns_dict, ns_register, gens, p, timesteps, tstep_length):
+def gen_opsch2cim(eq, ns_dict, ns_register, gens, timesteps, tstep_length):
     #---iterate here to make one op schedule for every gen
     op_id_no = 0
     for gen_element in eq.findall('cim:'+gens.element_type,ns_dict): 
@@ -124,7 +124,7 @@ def gen_opsch2cim(eq, ns_dict, ns_register, gens, p, timesteps, tstep_length):
             
             for seq_no in range(timesteps):
                 tp_id = sch_id + '_' + 'tp_id' + str(tp_id_no)
-                gen_opsch_timepoint(eq, ns_register, sch_id, tp_id, seq_no, p[seq_no, op_id_no])
+                gen_opsch_timepoint(eq, ns_register, sch_id, tp_id, seq_no, gens.ts_p[seq_no, op_id_no])
 
                 tp_id_no+=1
                 
@@ -167,7 +167,7 @@ def gen_opsch_timepoint(eq, ns, sch_id, tp_id, seq_no, p):
 
 ##---GENERATORS (Measurement timeseries)---
 
-def gen_mea2cim(eq, ns_dict, ns_register, gens, p, timesteps, tstep_length):
+def gen_mea2cim(eq, ns_dict, ns_register, gens, timesteps, tstep_length):
     #---iterate here to make one analog measurement series for every gen
     meas_id_no = 0
     for gen_element in eq.findall('cim:'+gens.element_type,ns_dict): 
@@ -185,7 +185,7 @@ def gen_mea2cim(eq, ns_dict, ns_register, gens, p, timesteps, tstep_length):
             
             for seq_no in range(timesteps):
                 tp_id = sch_id + '_' + 'tp_id' + str(tp_id_no)
-                meas_value(eq, ns_register, sch_id, tp_id, tp_id_no, p[seq_no, meas_id_no])
+                meas_value(eq, ns_register, sch_id, tp_id, tp_id_no, gens.ts_p[seq_no, meas_id_no])
 
                 tp_id_no+=1
                 
@@ -233,9 +233,9 @@ def meas_value(eq, ns, sch_id, tp_id, tp_id_no, p):
       
 
 ##---OUTPUTS---   
-def write_output(tree, filename):
+def write_output(tree, file):
     # create modified cim file
     root = tree.getroot()
     ET.indent(root, '    ') # indent added entries for better visuals
-    tree.write(filename+'.xml', xml_declaration=True, encoding="UTF-8")
+    tree.write(file, xml_declaration=True, encoding="UTF-8")
     

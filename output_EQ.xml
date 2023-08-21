@@ -854,6 +854,7 @@
         <cim:Equipment.aggregate>false</cim:Equipment.aggregate>
         <cim:Equipment.EquipmentContainer rdf:resource="#_c1d5bfde8f8011e08e4d00247eb1f55e" />
         <cim:ConformLoad.LoadGroup rdf:resource="#_load_grp_no0" />
+        <cim:ConformLoad.LoadGroup rdf:resource="#_load_grp_no0" />
     </cim:ConformLoad>
     <cim:ConformLoad rdf:ID="_25ab1b5b-6803-47e2-805a-ab7b2072e034">
         <cim:IdentifiedObject.name>NL-Load_2</cim:IdentifiedObject.name>
@@ -861,6 +862,7 @@
         <cim:IdentifiedObject.description>Electrabel</cim:IdentifiedObject.description>
         <cim:Equipment.aggregate>true</cim:Equipment.aggregate>
         <cim:Equipment.EquipmentContainer rdf:resource="#_c1d5bfde8f8011e08e4d00247eb1f55e" />
+        <cim:ConformLoad.LoadGroup rdf:resource="#_load_grp_no1" />
         <cim:ConformLoad.LoadGroup rdf:resource="#_load_grp_no1" />
     </cim:ConformLoad>
     <cim:ConformLoad rdf:ID="_b1e03a8f-6a11-4454-af58-4a4a680e857f">
@@ -870,6 +872,7 @@
         <cim:Equipment.aggregate>false</cim:Equipment.aggregate>
         <cim:Equipment.EquipmentContainer rdf:resource="#_c1d5bfea8f8011e08e4d00247eb1f55e" />
         <cim:EnergyConsumer.LoadResponse rdf:resource="#_7a797ed8-c370-47cf-83df-16c40f8fff69" />
+        <cim:ConformLoad.LoadGroup rdf:resource="#_load_grp_no2" />
         <cim:ConformLoad.LoadGroup rdf:resource="#_load_grp_no2" />
     </cim:ConformLoad>
     <cim:EquivalentInjection rdf:ID="_83bea592-913e-4473-8d17-969968ff83a2">
@@ -1943,6 +1946,7 @@
         <cim:Equipment.aggregate>false</cim:Equipment.aggregate>
         <cim:Equipment.EquipmentContainer rdf:resource="#_c49942d6-8b01-4b01-b5e8-f1180f84906c" />
         <cim:GeneratingUnit.GenUnitOpSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:GeneratingUnit.GenUnitOpSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
     </cim:ThermalGeneratingUnit>
     <cim:VoltageLevel rdf:ID="_2a37dc57-2faf-464a-8175-bc415f9a635f">
         <cim:IdentifiedObject.name>15.8</cim:IdentifiedObject.name>
@@ -1986,146 +1990,146 @@
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id0">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>0</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.09784087190100366</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.9652260056362097</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.3524499960900158</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.6496922380010175</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id1">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>1</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.8534077300892705</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.9411514095682768</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.9368922738109589</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.6220551683667223</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id2">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>2</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.9374566299164011</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.9959122854639089</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.04137582039486398</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.5154430165783999</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id3">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>3</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.8603464942990809</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.23566966347027896</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.9708719423911527</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.4386837733231067</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id4">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>4</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.4919953727655181</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.001293772585204911</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.5962086985072278</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.046290667153815246</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id5">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>5</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.49831422275513015</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.639961803228829</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.012101137737158818</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.5599060004353376</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id6">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>6</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.005882203752306192</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.9611349630897349</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.8012863307411665</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.5900718148668526</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id7">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>7</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.32475288391266177</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.1457374305460999</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.36517059319652645</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.8441976881588281</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id8">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>8</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.861217353853365</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.9755583010760157</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.20298789058704447</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.25400619698911764</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id9">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>9</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.08911255104218063</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.09129941359996263</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.2573227135875976</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.04911331457469814</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id10">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>10</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.46378330447461935</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.7135694286898735</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.4933659493313486</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.3673654788610593</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id11">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>11</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.6833154444717726</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.7128073016115912</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.5811167776966831</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.052112350950141884</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id12">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>12</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.5623006147674388</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.48778377176878296</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.3800186635768622</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.7712598880011545</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id13">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>13</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.16339967890289397</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.6891878774797925</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.6113196150609518</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.557081292766411</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id14">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>14</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.5325441307793058</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.19221192715277713</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.8644333319478417</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.25749218037534305</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id15">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>15</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.6102172080062239</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.8110338316609343</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.36844344684759256</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.9744252943612975</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id16">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>16</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.6054437157496346</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.8703286466971037</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.5682598440203761</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.48810455986307255</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id17">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>17</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.47649174647858994</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.8703265253619997</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.7494504630044665</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.8465589583255378</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id18">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>18</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.7796986828989317</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.7152780811984898</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.9290563963803287</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.6615610416520601</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id19">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>19</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.11546811115467692</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.22299348046643086</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.0042646502243326445</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.06191048198924742</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id20">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>20</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.23163101683908827</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.3662829296469583</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.07338883091733028</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.08034890764921865</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id21">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>21</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.7745908184479898</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.018455048428189347</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.29017493418843787</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.5297961197754838</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id22">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>22</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.34085293693132224</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.577496913381789</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.4974303229057754</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.7854610162914983</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id23">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>23</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.31171103476613926</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.3691888535839777</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.5965880220380931</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.7510318944942632</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:ConformLoadGroup rdf:ID="_load_grp_no1">
         <cim:IdentifiedObject.name>NL-Load_2_group</cim:IdentifiedObject.name>
@@ -2141,146 +2145,146 @@
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id0">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>0</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.861913396236254</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.41518159391418485</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.22189262717630598</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.7908159621630878</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id1">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>1</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.8259500761346981</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.42231342170085273</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.055072161517565</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.8738182867969387</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id2">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>2</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.16021538243726552</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.076055139349952</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.8167023204891825</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.09116656784400967</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id3">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>3</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.185866218054201</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.33801982205538894</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.8371281365961745</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.9276762701708962</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id4">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>4</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.5213647233596501</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.8057434164768491</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.36348931420558883</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.23943024006491076</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id5">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>5</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.44100771035671216</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.43948325873934413</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.41204658956064477</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.9652415674808368</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id6">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>6</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.07125101970817349</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.9246822511126702</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.20640206158782104</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.749327787257896</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id7">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>7</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.5695148162186582</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.15841023337571303</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.5232413078374211</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.010538654808226577</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id8">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>8</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.39037575663497504</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.15612941650182421</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.3782706358589457</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.34822321753559815</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id9">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>9</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.8808690022443246</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.8214529269577908</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.5834879171786398</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.3317879907059428</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id10">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>10</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.01572245610726064</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.3573558834521193</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.4574770283639382</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.4328913545725406</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id11">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>11</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.9917262662170091</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.4407460866567079</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.7777182085887012</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.9256287936048677</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id12">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>12</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.879084601018309</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.5265371914217215</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.15844405261881445</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.033481092543126034</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id13">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>13</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.8436124933185448</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.6580095087500699</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.22620726303126804</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.14019595000117757</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id14">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>14</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.7196926626798927</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.2889633469419016</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.2569010172203403</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.62229467631434</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id15">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>15</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.9444487251463105</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.4430865179222273</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.45999201473431917</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.4479223124861319</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id16">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>16</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.0460783681510335</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.03399869481713014</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.7376969978750928</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.5203882079261718</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id17">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>17</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.3146694723757527</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.7307445158535636</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.39846285343658305</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.7759680516378958</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id18">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>18</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.6384307643171212</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.46082749535875034</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.8464790067565969</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.8244984846393807</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id19">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>19</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.3732426443147935</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.7536656880181414</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.5413014203023437</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.2558066212148089</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id20">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>20</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.15700974952592583</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.9517618919584467</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.3056764814535292</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.044615696804800264</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id21">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>21</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.6397945402753306</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.29211668729697704</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.3827985186809748</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.5142700932815695</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id22">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>22</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.1789354355294458</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.9836970388782829</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.6973132122135107</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.8517436834975677</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id23">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
         <cim:RegularTimePoint.sequenceNumber>23</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.6325292678045176</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.7185846651892559</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.6595484212496961</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.6516963233123171</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:ConformLoadGroup rdf:ID="_load_grp_no2">
         <cim:IdentifiedObject.name>NL-Load_3_group</cim:IdentifiedObject.name>
@@ -2296,146 +2300,146 @@
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id0">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>0</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.08058452698737273</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.7410659023858072</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.8196966624165735</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.33747145981908644</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id1">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>1</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.43834550712549947</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.3343582862825827</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.365266817210279</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.6966631543501886</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id2">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>2</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.6527690628919403</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.6989578011104861</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.6222782796066882</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.13654963060604097</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id3">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>3</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.08403907561467117</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.12011885616390294</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.3674995646845206</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.4638047658448077</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id4">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>4</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.31345366721165924</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.8246383221888263</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.4243739471541845</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.6186564212101765</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id5">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>5</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.4492437045870057</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.2076057901166054</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.8789660902143951</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.40687808152625116</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id6">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>6</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.05898352083179914</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.18317156718785654</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.5232671617900954</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.43794441785066185</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id7">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>7</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.46744029418894506</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.8906808614661454</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.39056758575733797</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.3851753863151779</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id8">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>8</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.3932545105385179</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.9810546553999641</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.9228179096693331</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.7807191170861484</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id9">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>9</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.2033189562231501</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.9452515259031368</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.656442564303428</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.800765657536498</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id10">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>10</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.9804263406667382</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.9413396762175581</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.9465125684127564</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.38336561178591577</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id11">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>11</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.4089127755548171</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.5189679272637514</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.04740876022655294</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.4329204092935105</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id12">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>12</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.9835132013647266</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.7160918006474888</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.43763703083995364</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.7782635289033076</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id13">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>13</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.5845656298223907</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.23581923263971505</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.9349179742730971</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.028000715332268666</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id14">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>14</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.3846534112198545</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.9007995035910898</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.11179168479410173</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.7740529695271293</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id15">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>15</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.9820542502189064</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.4428640844456304</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.046774433121688164</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.19693912061038377</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id16">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>16</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.4996515642109487</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.3076693665491115</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.0014937765915262746</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.7017660796842591</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id17">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>17</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.9484797120853391</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.039843001895921715</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.7695756163410938</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.22032411657974793</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id18">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>18</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.4637869974559783</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.6601175909642386</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.7597707465173308</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.004359892807848875</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id19">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>19</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.014921841086657506</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.8833128449564779</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.9823800112281935</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.8217047416415139</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id20">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>20</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.48063488926199804</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.4381268140697715</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.9260359529178341</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.14327419020000887</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id21">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>21</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.5485107540776938</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.7330130396898537</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.5500493545734878</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.03771264076815728</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id22">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>22</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.7406636217162147</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.41618602899075774</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.9243970717082793</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.898917070204629</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id23">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
         <cim:RegularTimePoint.sequenceNumber>23</cim:RegularTimePoint.sequenceNumber>
-        <cim:RegularTimePoint.value1>0.9293111855479756</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.9673205561134114</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value1>0.8880358717435008</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.7847762031001414</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:GenUnitOpSchedule rdf:ID="_gen_unit_commit_no0_schedule">
         <cim:IdentifiedObject.name>Gen-12910_timeseries</cim:IdentifiedObject.name>
@@ -2448,145 +2452,145 @@
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>0</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.4762138529849347</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.6207801257590899</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id1">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>1</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.5846653801934051</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.5912053919277225</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id2">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>2</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.9031149171951182</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.5783576381711841</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id3">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>3</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.900768873358541</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.4463736651925938</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id4">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>4</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.9389868959905663</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.36719555850420227</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id5">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>5</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.3285711771341283</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.7923660725221835</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id6">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>6</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.7095991866931733</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.6147562963723567</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id7">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>7</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.022781217310999247</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.0685160533158361</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id8">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>8</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.546927645210228</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.052406462915659646</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id9">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>9</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.7146482180328064</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.8463981725177531</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id10">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>10</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.5365817284258909</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.33320018077663094</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id11">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>11</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.4136709286472987</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.22955917261096903</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id12">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>12</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.24936854811665177</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.9723315976857024</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id13">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>13</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.8507864728378921</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.6611253695950047</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id14">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>14</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.042024118899448126</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.9873029736827527</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id15">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>15</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.594430004561825</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.6939543672053015</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id16">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>16</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.6255780994485989</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.7225087284096664</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id17">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>17</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.7461993167184119</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.7949726137933653</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id18">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>18</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.05399093371616426</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.3286129640436817</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id19">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>19</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.5702208049425657</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.17485211840212267</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id20">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>20</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.7921409558545986</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.6693181224635292</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id21">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>21</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.9675152617256368</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.49770591493019634</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id22">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>22</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.43405897829231566</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.10766950116203189</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id23">
         <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
         <cim:RegularTimePoint.sequenceNumber>23</cim:RegularTimePoint.sequenceNumber>
         <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
-        <cim:RegularTimePoint.value2>0.4487537011669369</cim:RegularTimePoint.value2>
+        <cim:RegularTimePoint.value2>0.4488660531888752</cim:RegularTimePoint.value2>
     </cim:RegularTimePoint>
     <cim:Analog rdf:ID="_gen_meas_series_no0">
         <cim:Measurement.PowerSystemResource rdf:ID="#__b850063d-eae7-4675-bc98-4642d3076783" />
@@ -2601,145 +2605,145 @@
         <cim:IdentifiedObject.name>VALUE_NO 0</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 0</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.06028453651744181</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.7636032864079674</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id1">
         <cim:IdentifiedObject.name>VALUE_NO 1</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 1</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.27713756205753937</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.3180553231415204</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id2">
         <cim:IdentifiedObject.name>VALUE_NO 2</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 2</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.08288451976298794</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.4068765297647232</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id3">
         <cim:IdentifiedObject.name>VALUE_NO 3</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 3</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.3521598889177916</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.8307619033293333</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id4">
         <cim:IdentifiedObject.name>VALUE_NO 4</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 4</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.35202919854023274</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.40974047843852945</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id5">
         <cim:IdentifiedObject.name>VALUE_NO 5</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 5</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.10509012021107844</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.5911971879472148</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id6">
         <cim:IdentifiedObject.name>VALUE_NO 6</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 6</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.1572803485012111</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.275975369783507</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id7">
         <cim:IdentifiedObject.name>VALUE_NO 7</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 7</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.7310851353847893</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.04383151239704519</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id8">
         <cim:IdentifiedObject.name>VALUE_NO 8</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 8</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.9170846545169791</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.37523254943394935</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id9">
         <cim:IdentifiedObject.name>VALUE_NO 9</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 9</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.5782496338328963</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.9664471227467311</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id10">
         <cim:IdentifiedObject.name>VALUE_NO 10</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 10</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.40560377998347996</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.6364973496715379</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id11">
         <cim:IdentifiedObject.name>VALUE_NO 11</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 11</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.4315684789386114</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.11993455355911875</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id12">
         <cim:IdentifiedObject.name>VALUE_NO 12</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 12</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.2946695167972416</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.7118891433312683</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id13">
         <cim:IdentifiedObject.name>VALUE_NO 13</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 13</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.5564681847510289</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.38742991007783045</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id14">
         <cim:IdentifiedObject.name>VALUE_NO 14</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 14</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.6394048522346676</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.6153181179434295</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id15">
         <cim:IdentifiedObject.name>VALUE_NO 15</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 15</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.19931210250302178</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.9738437051645434</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id16">
         <cim:IdentifiedObject.name>VALUE_NO 16</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 16</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.7752566761254844</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.6180888250651085</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id17">
         <cim:IdentifiedObject.name>VALUE_NO 17</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 17</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.809909944865991</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.6156512003831659</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id18">
         <cim:IdentifiedObject.name>VALUE_NO 18</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 18</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.2054197094895195</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.4332872838303764</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id19">
         <cim:IdentifiedObject.name>VALUE_NO 19</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 19</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.430902311955055</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.4041176830453086</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id20">
         <cim:IdentifiedObject.name>VALUE_NO 20</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 20</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.5980911032594516</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.07390859944433947</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id21">
         <cim:IdentifiedObject.name>VALUE_NO 21</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 21</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.5371967410468467</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.23779291138670045</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id22">
         <cim:IdentifiedObject.name>VALUE_NO 22</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 22</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.6304975090005996</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.6664256731032073</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id23">
         <cim:IdentifiedObject.name>VALUE_NO 23</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 23</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
-        <cim:AnalogValue.value>0.10708620985286099</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.2904078304873303</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:Analog rdf:ID="_gen_meas_series_no1">
         <cim:Measurement.PowerSystemResource rdf:ID="#__049438a6-780a-44fe-a788-ebe385d98e25" />
@@ -2754,144 +2758,1066 @@
         <cim:IdentifiedObject.name>VALUE_NO 0</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 0</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.9249296587154342</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.44843974046175306</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id1">
         <cim:IdentifiedObject.name>VALUE_NO 1</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 1</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.9093497197841535</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.8946081975582559</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id2">
         <cim:IdentifiedObject.name>VALUE_NO 2</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 2</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.8017757827840268</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.36725317636074306</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id3">
         <cim:IdentifiedObject.name>VALUE_NO 3</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 3</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.5346892619642362</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.8729894062071918</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id4">
         <cim:IdentifiedObject.name>VALUE_NO 4</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 4</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.6196087562750197</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.45909157946169543</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id5">
         <cim:IdentifiedObject.name>VALUE_NO 5</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 5</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.4402784123093848</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.797852932895975</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id6">
         <cim:IdentifiedObject.name>VALUE_NO 6</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 6</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.9869798176035716</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.8585072657108366</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id7">
         <cim:IdentifiedObject.name>VALUE_NO 7</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 7</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.9643920635915376</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.5916764563352196</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id8">
         <cim:IdentifiedObject.name>VALUE_NO 8</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 8</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.37328450283453696</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.48762960596110005</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id9">
         <cim:IdentifiedObject.name>VALUE_NO 9</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 9</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.7411396445075124</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.8930738781988069</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id10">
         <cim:IdentifiedObject.name>VALUE_NO 10</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 10</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.1183155222575174</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.6591576905383079</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id11">
         <cim:IdentifiedObject.name>VALUE_NO 11</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 11</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.42948854387944513</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.3983829444240079</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id12">
         <cim:IdentifiedObject.name>VALUE_NO 12</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 12</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.542062544975329</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.5643101485972323</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id13">
         <cim:IdentifiedObject.name>VALUE_NO 13</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 13</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.18181749018647841</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.5912169160844707</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id14">
         <cim:IdentifiedObject.name>VALUE_NO 14</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 14</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.4599406739296237</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.5578424931605156</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id15">
         <cim:IdentifiedObject.name>VALUE_NO 15</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 15</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.8183770507963659</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.20530998732064631</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id16">
         <cim:IdentifiedObject.name>VALUE_NO 16</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 16</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.5938043724758691</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.7221139371488978</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id17">
         <cim:IdentifiedObject.name>VALUE_NO 17</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 17</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.48011880721852906</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.3944333812970766</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id18">
         <cim:IdentifiedObject.name>VALUE_NO 18</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 18</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.7918281301056608</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.38170422184971664</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id19">
         <cim:IdentifiedObject.name>VALUE_NO 19</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 19</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.35158775113581997</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.5025313228623429</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id20">
         <cim:IdentifiedObject.name>VALUE_NO 20</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 20</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.38096018551254496</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.12405282241974303</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id21">
         <cim:IdentifiedObject.name>VALUE_NO 21</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 21</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.9116077733829591</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.8795085858974047</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id22">
         <cim:IdentifiedObject.name>VALUE_NO 22</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 22</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.054454110853011994</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.8981085128135297</cim:AnalogValue.value>
     </cim:AnalogValue>
     <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id23">
         <cim:IdentifiedObject.name>VALUE_NO 23</cim:IdentifiedObject.name>
         <cim:IdentifiedObject.description>sequenceNumber 23</cim:IdentifiedObject.description>
         <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
-        <cim:AnalogValue.value>0.06895721321075976</cim:AnalogValue.value>
+        <cim:AnalogValue.value>0.06549150237230594</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:ConformLoadGroup rdf:ID="_load_grp_no0">
+        <cim:IdentifiedObject.name>NL-Load_1_group</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>load_grp_no0</cim:IdentifiedObject.description>
+    </cim:ConformLoadGroup>
+    <cim:ConformLoadSchedule rdf:ID="_load_grp_no0_schedule">
+        <cim:IdentifiedObject.name>NL-Load_1_timeseries</cim:IdentifiedObject.name>
+        <cim:ConformLoadSchedule.ConformLoadGroup rdf:resource="#_load_grp_no0" />
+        <cim:BasicIntervalSchedule.value1Unit rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#UnitSymbol.W" />
+        <cim:BasicIntervalSchedule.value2Unit rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#UnitSymbol.VAr" />
+        <cim:RegularIntervalSchedule.timeStep>3600</cim:RegularIntervalSchedule.timeStep>
+    </cim:ConformLoadSchedule>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id0">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>0</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.0639516245062145</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.5553367020960078</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id1">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>1</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.9728378002702224</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.16671578292392353</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id2">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>2</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.3049358965714316</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.8240213247553669</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id3">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>3</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.8775604960957479</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.8826993848717427</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id4">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>4</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.2673147906012182</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.5393942598484655</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id5">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>5</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.43130405999470967</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.3592051071358968</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id6">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>6</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.6092493186216413</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.8648415168639467</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id7">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>7</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.7986480918695339</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.2077230897847444</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id8">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>8</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.9694641024258441</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.1840089257669848</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id9">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>9</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.7834848931049836</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.1635470534416925</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id10">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>10</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.22946569327810706</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.6862219345619609</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id11">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>11</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.9464294361049614</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.12326446451543782</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id12">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>12</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.009099620878253334</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.5178279058722179</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id13">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>13</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.9096775702510278</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.22055156959516453</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id14">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>14</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.22530366854370365</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.6013708423269314</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id15">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>15</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.3865868239063809</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.9468143170465814</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id16">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>16</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.4152974028493539</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.3702181222786828</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id17">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>17</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.5386265284485526</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.8873657321414512</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id18">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>18</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.729851494352665</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.9333355286836368</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id19">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>19</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.8558960480544852</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.04485431383607352</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id20">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>20</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.9235227192675517</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.6099921762501865</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id21">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>21</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.14006470189829556</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.09539785874109685</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id22">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>22</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.7653871526338498</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.2982808651848422</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no0_schedule_tp_id23">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>23</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.698468418891982</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.34748478593767584</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:ConformLoadGroup rdf:ID="_load_grp_no1">
+        <cim:IdentifiedObject.name>NL-Load_2_group</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>load_grp_no1</cim:IdentifiedObject.description>
+    </cim:ConformLoadGroup>
+    <cim:ConformLoadSchedule rdf:ID="_load_grp_no1_schedule">
+        <cim:IdentifiedObject.name>NL-Load_2_timeseries</cim:IdentifiedObject.name>
+        <cim:ConformLoadSchedule.ConformLoadGroup rdf:resource="#_load_grp_no1" />
+        <cim:BasicIntervalSchedule.value1Unit rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#UnitSymbol.W" />
+        <cim:BasicIntervalSchedule.value2Unit rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#UnitSymbol.VAr" />
+        <cim:RegularIntervalSchedule.timeStep>3600</cim:RegularIntervalSchedule.timeStep>
+    </cim:ConformLoadSchedule>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id0">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>0</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.14651821472609072</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.031141592235540805</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id1">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>1</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.2036602832524358</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.7198172878699677</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id2">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>2</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.7175854613687668</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.24233480091081538</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id3">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>3</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.23760632260350467</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.1278980492266789</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id4">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>4</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.3832228984076107</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.7226876938427882</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id5">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>5</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.46992077902446605</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.6626941819209481</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id6">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>6</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.5245320014590522</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.5795832402202443</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id7">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>7</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.16089695009998006</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.2887881224752944</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id8">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>8</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.06702888459609091</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.20967401126147944</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id9">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>9</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.911425532357005</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.1133177343930476</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id10">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>10</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.01870095639948055</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.6744475429660984</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id11">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>11</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.8579187331498187</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.05934625985762809</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id12">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>12</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.43005973452533786</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.7036235014074851</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id13">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>13</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.2629372776530662</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.2265987527745904</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id14">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>14</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.22546211685006468</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.4753528009703555</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id15">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>15</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.16395973699301047</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.05170394584690352</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id16">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>16</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.959077562838983</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.811446305853135</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id17">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>17</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.09377840083812039</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.5664260368757404</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id18">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>18</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.13872187901105626</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.8658760924631309</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id19">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>19</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.3090958979538443</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.602751493097482</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id20">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>20</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.8124729150567512</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.7568758412151774</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id21">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>21</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.17863644146902713</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.5334801676159994</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id22">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>22</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.48561060097228737</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.8302700249305305</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no1_schedule_tp_id23">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no1_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>23</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.6955153926591787</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.04078127101449591</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:ConformLoadGroup rdf:ID="_load_grp_no2">
+        <cim:IdentifiedObject.name>NL-Load_3_group</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>load_grp_no2</cim:IdentifiedObject.description>
+    </cim:ConformLoadGroup>
+    <cim:ConformLoadSchedule rdf:ID="_load_grp_no2_schedule">
+        <cim:IdentifiedObject.name>NL-Load_3_timeseries</cim:IdentifiedObject.name>
+        <cim:ConformLoadSchedule.ConformLoadGroup rdf:resource="#_load_grp_no2" />
+        <cim:BasicIntervalSchedule.value1Unit rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#UnitSymbol.W" />
+        <cim:BasicIntervalSchedule.value2Unit rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#UnitSymbol.VAr" />
+        <cim:RegularIntervalSchedule.timeStep>3600</cim:RegularIntervalSchedule.timeStep>
+    </cim:ConformLoadSchedule>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id0">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>0</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.18656299100127627</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.43055094018266327</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id1">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>1</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.7736749453496187</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.4606001128249435</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id2">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>2</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.052460564242124974</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.5071793520100394</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id3">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>3</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.19375329096238825</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.24068973692948492</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id4">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>4</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.1265487023280213</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.5176236573710837</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id5">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>5</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.07705138857456617</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.3307209480466462</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id6">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>6</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.3110980604084893</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.6590073681232913</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id7">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>7</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.14173265644573785</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.5297836696498173</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id8">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>8</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.9501199607178951</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.3353604477469838</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id9">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>9</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.9969816732145658</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.3709380320417054</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id10">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>10</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.7155084007685512</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.2319993394047941</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id11">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>11</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.8965026763110524</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.23096122178712786</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id12">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>12</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.6540015035545317</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.5719369681277485</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id13">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>13</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.05277323092750297</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.9955275573512011</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id14">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>14</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.7775778596439451</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.28557754134023383</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id15">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>15</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.2424977536305456</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.5782344329603888</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id16">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>16</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.3660338573054217</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.778531202437052</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id17">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>17</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.4174127655153308</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.8320379030257223</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id18">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>18</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.5935748728346362</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.0013794892074578957</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id19">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>19</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.8510857512360924</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.044764524082677615</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id20">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>20</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.6934376755669809</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.4279116502234964</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id21">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>21</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.9007359299192533</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.1363019592787067</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id22">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>22</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.5686920736568233</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.31407369124811013</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_load_grp_no2_schedule_tp_id23">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_load_grp_no2_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>23</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>0.6353416139320374</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.3635837602580473</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:GenUnitOpSchedule rdf:ID="_gen_unit_commit_no0_schedule">
+        <cim:IdentifiedObject.name>Gen-12910_timeseries</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>gen_unit_commit_no0_schedule</cim:IdentifiedObject.description>
+        <cim:BasicIntervalSchedule.value1Unit rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#UnitSymbol.none" />
+        <cim:BasicIntervalSchedule.value2Unit rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#UnitSymbol.W" />
+        <cim:RegularIntervalSchedule.timeStep>3600</cim:RegularIntervalSchedule.timeStep>
+    </cim:GenUnitOpSchedule>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id0">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>0</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.33898716853336863</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id1">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>1</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.9990128327836997</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id2">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>2</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.4292232069326858</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id3">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>3</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.16557731659537234</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id4">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>4</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.6934526521925045</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id5">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>5</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.15948829458509206</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id6">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>6</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.28181371071495087</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id7">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>7</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.4420310411068282</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id8">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>8</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.6034525792856607</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id9">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>9</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.06123795501415308</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id10">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>10</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.33144528910289517</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id11">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>11</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.3472044153024405</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id12">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>12</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.6141413628246134</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id13">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>13</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.8168789578044049</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id14">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>14</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.05590528315061383</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id15">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>15</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.9604406473239768</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id16">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>16</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.6001202959407458</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id17">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>17</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.6264317409465139</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id18">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>18</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.8220475109527146</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id19">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>19</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.3103262968360012</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id20">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>20</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.744825254458464</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id21">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>21</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.9027287265560314</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id22">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>22</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.5090665498760004</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:RegularTimePoint rdf:ID="_gen_unit_commit_no0_schedule_tp_id23">
+        <cim:RegularTimePoint.IntervalSchedule rdf:resource="#_gen_unit_commit_no0_schedule" />
+        <cim:RegularTimePoint.sequenceNumber>23</cim:RegularTimePoint.sequenceNumber>
+        <cim:RegularTimePoint.value1>3</cim:RegularTimePoint.value1>
+        <cim:RegularTimePoint.value2>0.39439680487083495</cim:RegularTimePoint.value2>
+    </cim:RegularTimePoint>
+    <cim:Analog rdf:ID="_gen_meas_series_no0">
+        <cim:Measurement.PowerSystemResource rdf:ID="#__b850063d-eae7-4675-bc98-4642d3076783" />
+        <cim:IdentifiedObject.name>Gen-12908_timeseries</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sTimestep=3600</cim:IdentifiedObject.description>
+        <cim:Measurement.unitMultiplier rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#UnitMultiplier.M" />
+        <cim:Measurement.unitSymbol rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#UnitSymbol.W" />
+        <cim:Measurement.phases rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC" />
+        <cim:Measurement.measurementType>ThreePhaseActivePower</cim:Measurement.measurementType>
+    </cim:Analog>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id0">
+        <cim:IdentifiedObject.name>VALUE_NO 0</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 0</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.3359989603464063</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id1">
+        <cim:IdentifiedObject.name>VALUE_NO 1</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 1</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.5621115426408001</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id2">
+        <cim:IdentifiedObject.name>VALUE_NO 2</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 2</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.34623072639900077</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id3">
+        <cim:IdentifiedObject.name>VALUE_NO 3</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 3</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.9614556338140912</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id4">
+        <cim:IdentifiedObject.name>VALUE_NO 4</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 4</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.19730994686308778</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id5">
+        <cim:IdentifiedObject.name>VALUE_NO 5</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 5</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.8900297404535371</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id6">
+        <cim:IdentifiedObject.name>VALUE_NO 6</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 6</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.9212929266162504</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id7">
+        <cim:IdentifiedObject.name>VALUE_NO 7</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 7</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.3575683015762856</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id8">
+        <cim:IdentifiedObject.name>VALUE_NO 8</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 8</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.5691929499575414</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id9">
+        <cim:IdentifiedObject.name>VALUE_NO 9</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 9</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.05161256794344227</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id10">
+        <cim:IdentifiedObject.name>VALUE_NO 10</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 10</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.29939976526285716</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id11">
+        <cim:IdentifiedObject.name>VALUE_NO 11</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 11</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.18412016461961433</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id12">
+        <cim:IdentifiedObject.name>VALUE_NO 12</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 12</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.2110569918963583</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id13">
+        <cim:IdentifiedObject.name>VALUE_NO 13</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 13</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.4052030918680479</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id14">
+        <cim:IdentifiedObject.name>VALUE_NO 14</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 14</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.7088395174598926</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id15">
+        <cim:IdentifiedObject.name>VALUE_NO 15</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 15</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.9355977117919806</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id16">
+        <cim:IdentifiedObject.name>VALUE_NO 16</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 16</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.5810569679624648</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id17">
+        <cim:IdentifiedObject.name>VALUE_NO 17</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 17</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.8673961874088862</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id18">
+        <cim:IdentifiedObject.name>VALUE_NO 18</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 18</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.10619314452744866</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id19">
+        <cim:IdentifiedObject.name>VALUE_NO 19</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 19</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.9052710127932553</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id20">
+        <cim:IdentifiedObject.name>VALUE_NO 20</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 20</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.11946031085925313</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id21">
+        <cim:IdentifiedObject.name>VALUE_NO 21</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 21</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.35239473796151044</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id22">
+        <cim:IdentifiedObject.name>VALUE_NO 22</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 22</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.32637567579326265</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no0_tp_id23">
+        <cim:IdentifiedObject.name>VALUE_NO 23</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 23</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no0" />
+        <cim:AnalogValue.value>0.6600834092713889</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:Analog rdf:ID="_gen_meas_series_no1">
+        <cim:Measurement.PowerSystemResource rdf:ID="#__049438a6-780a-44fe-a788-ebe385d98e25" />
+        <cim:IdentifiedObject.name>Gen-12923_timeseries</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sTimestep=3600</cim:IdentifiedObject.description>
+        <cim:Measurement.unitMultiplier rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#UnitMultiplier.M" />
+        <cim:Measurement.unitSymbol rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#UnitSymbol.W" />
+        <cim:Measurement.phases rdf:resource="http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC" />
+        <cim:Measurement.measurementType>ThreePhaseActivePower</cim:Measurement.measurementType>
+    </cim:Analog>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id0">
+        <cim:IdentifiedObject.name>VALUE_NO 0</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 0</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.8698255332484494</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id1">
+        <cim:IdentifiedObject.name>VALUE_NO 1</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 1</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.8299588854097366</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id2">
+        <cim:IdentifiedObject.name>VALUE_NO 2</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 2</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.6031424959003198</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id3">
+        <cim:IdentifiedObject.name>VALUE_NO 3</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 3</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.89604496346457</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id4">
+        <cim:IdentifiedObject.name>VALUE_NO 4</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 4</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.04434796240209837</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id5">
+        <cim:IdentifiedObject.name>VALUE_NO 5</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 5</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.21231006331591762</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id6">
+        <cim:IdentifiedObject.name>VALUE_NO 6</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 6</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.5751908173993501</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id7">
+        <cim:IdentifiedObject.name>VALUE_NO 7</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 7</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.4685446746942967</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id8">
+        <cim:IdentifiedObject.name>VALUE_NO 8</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 8</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.8294378845950656</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id9">
+        <cim:IdentifiedObject.name>VALUE_NO 9</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 9</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.10592996224750129</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id10">
+        <cim:IdentifiedObject.name>VALUE_NO 10</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 10</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.6558086867444469</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id11">
+        <cim:IdentifiedObject.name>VALUE_NO 11</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 11</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.027823581342612314</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id12">
+        <cim:IdentifiedObject.name>VALUE_NO 12</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 12</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.07846538819342463</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id13">
+        <cim:IdentifiedObject.name>VALUE_NO 13</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 13</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.006439805886801042</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id14">
+        <cim:IdentifiedObject.name>VALUE_NO 14</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 14</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.5804911523998335</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id15">
+        <cim:IdentifiedObject.name>VALUE_NO 15</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 15</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.6751114122555785</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id16">
+        <cim:IdentifiedObject.name>VALUE_NO 16</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 16</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.7519283415341496</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id17">
+        <cim:IdentifiedObject.name>VALUE_NO 17</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 17</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.1446795823615129</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id18">
+        <cim:IdentifiedObject.name>VALUE_NO 18</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 18</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.34486548242040305</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id19">
+        <cim:IdentifiedObject.name>VALUE_NO 19</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 19</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.5352737939358186</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id20">
+        <cim:IdentifiedObject.name>VALUE_NO 20</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 20</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.6884676856234392</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id21">
+        <cim:IdentifiedObject.name>VALUE_NO 21</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 21</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.3006325484345562</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id22">
+        <cim:IdentifiedObject.name>VALUE_NO 22</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 22</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.6466464334506268</cim:AnalogValue.value>
+    </cim:AnalogValue>
+    <cim:AnalogValue rdf:ID="_gen_meas_series_no1_tp_id23">
+        <cim:IdentifiedObject.name>VALUE_NO 23</cim:IdentifiedObject.name>
+        <cim:IdentifiedObject.description>sequenceNumber 23</cim:IdentifiedObject.description>
+        <cim:AnalogValue.Analog rdf:resource="#_gen_meas_series_no1" />
+        <cim:AnalogValue.value>0.330105582628915</cim:AnalogValue.value>
     </cim:AnalogValue>
 </rdf:RDF>

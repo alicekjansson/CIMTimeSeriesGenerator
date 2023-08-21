@@ -18,12 +18,11 @@ def data_extract(eq, ssh, ns):
     else:
         loads = False
     
-    # Create conform and nonconform loads?
     # conform loads = loads/load grouos scale from one common profile. See full grid model
     # nonconform loads = individual profiles for each load/load group. See full grid model
     
     
-    # if PVs in data create PV class and extract required data  
+    # if PVs in data create PV class and extract required data NOTE: solar thermal units (SolarGeneratingUnit CIM class) are not represented in this version 
     element_type = 'PhotoVoltaicUnit'
     if eq.findall('cim:'+element_type,ns):
         gen_type = 'PV'
