@@ -7,37 +7,53 @@ Created on Wed Jul  5 09:29:40 2023
 
 import pandas as pd
 import matplotlib.pyplot as plt
-from alice_func import aggregate
+from alice_func import aggregate, calculate_N
 import PySimpleGUI as sg
 
 # Check themes
 #sg.theme_previewer()
 
 sg.theme('LightGreen5')
-layout1 = [
-    [sg.Text("#Houses:")],
-    [sg.Input('100',key='nbr_house')],
+col1 = [
     [sg.Text('Choose bidding area:')],  
-    [sg.Combo(['SE1','SE2','SE3','SE4'],key='ZONE',enable_events=True,default_value='SE4',size=[10,10])],
+    [sg.Combo(['SE1','SE2','SE3','SE4'],key='ZONE',enable_events=True,default_value='SE4',size=(10, 1))],  
 ]
-layout2 = [
-    [sg.Text("#Apartment buildings:")],
-    [sg.Input('10',key='nbr_apartm')],
-    [sg.Text('Choose season:')],
-    [sg.Combo(['Winter','Autumn/Spring','Summer'],key='SEASON',enable_events=True,default_value='Winter')],
-]
-layout3 = [
-    [sg.Text("#Industry:")],
-    [sg.Input('10',key='nbr_industry')],
+col2 = [
     [sg.Text('Choose day:')],
-    [sg.Combo(['Weekday','Weekend'],key='DAY',enable_events=True,default_value='Weekday')],
+    [sg.Combo(['Weekday','Weekend'],key='DAY',enable_events=True,default_value='Weekday',size=(10, 1))],  
+]
+col3 = [
+    [sg.Text('Choose season:')],
+    [sg.Combo(['Winter','Autumn/Spring','Summer'],key='SEASON',enable_events=True,default_value='Winter',size=(10, 1))], 
+]
+
+loads=[1,2,3,4]
+load_left = [
+    [sg.Text("Loads")],
+    [sg.Listbox(loads,key='LOADS',size=[100,50],enable_events=True)],
+]
+r1=sg.Radio('Average','load',default=True,enable_events=True,key='AVERAGE')
+r2=sg.Radio('Urban area','load',enable_events=True,key='URBAN')
+r3=sg.Radio('Rural area','load',enable_events=True,key='RURAL')
+r4=sg.Radio('Industrial area','load',enable_events=True,key='INDUSTRY')
+load_right = [
+    [sg.Text("Select load case")],
+    [r1],
+    [r2],
+    [r3],
+    [r4]
 ]
 
 layout = [[sg.Text('Time Series Generator',font=('Helvetica',30))],
-          [sg.Text('Choose dwellings:')],
-          [sg.Column(layout1,size=[150,150]),
-           sg.Column(layout2,size=[150,150]),
-           sg.Column(layout3,size=[150,150]),],
+          [sg.HorizontalSeparator()],
+          [sg.Column(col1,size=[150,50]),
+           sg.Column(col2,size=[150,50]),
+           sg.Column(col3,size=[150,50])],
+          [sg.HorizontalSeparator()],
+          [sg.Column(load_left,size=[200,150]),
+           sg.VerticalSeparator(),
+           sg.Column(load_right,size=[200,150])],
+          [sg.HorizontalSeparator()],
           [sg.Text('CSV Name', size=(12, 1)), sg.Input(key='Name')],
           [sg.Text('CSV Location', size=(12, 1)), sg.Input('./Generated_csv',key='loc'), sg.FolderBrowse()],
           [sg.Submit('Only Generate Timeseries'),sg.Submit('Generate and Save as CSV'),sg.Exit()]
@@ -46,24 +62,12 @@ layout = [[sg.Text('Time Series Generator',font=('Helvetica',30))],
 # Create the window
 window = sg.Window('Load Timeseries Generator', layout)
 
-# TYP
-# 0 Småhus direktel
-# 1 Småhus hushållsel
-# 2 Lägenhet
-# 3 Industri
-# SEASON
-# 0 Vinter
-# 1 Vår/Höst
-# 2 Sommar
-# DAY
-# 0 Vardag
-# 1 Helg och helgdag
-
-dwellings=['Småhus','Lägenhet','Industri']
 types=['Småhus Direktel','Småhus Hushållsel','Lägenhet','Industri']
 bids=['SE1','SE2','SE3','SE4']
 seasons=['Winter','Autumn/Spring','Summer']
 days=['Weekday','Weekend']
+
+P_scale=5   #Define load level
 
 
 # Run GUI
@@ -72,11 +76,6 @@ while True:
     # End program if user closes window
     if event == "Exit" or event == sg.WIN_CLOSED:
         break
-    # if values['TYP']:
-    #     choice=values['TYP']                # Get user choice
-    #     for i,d in enumerate(dwellings):    # Get user choice in int form
-    #         if choice == d:
-    #             typ=i                       # Update house dwelling type
     if values['ZONE']:
         choice=values['ZONE']                # Get user choice
         for i,d in enumerate(bids):
@@ -92,27 +91,26 @@ while True:
         for i,d in enumerate(days):
             if choice == d:
                 dag=i
+    if values['AVERAGE']==True:
+        dwellings=[0.94,0.03,0.03]
+    if values['URBAN']==True:
+        dwellings=[0.69,0.30,0.01]
+    if values['RURAL']==True:
+        dwellings=[0.96,0.01,0.03]
+    if values['INDUSTRY']==True:
+        dwellings=[0.88,0.02,0.10]
     for n,gen in enumerate(['Only Generate Timeseries','Generate and Save as CSV']):
         if event == gen:
             P_tot=[]
-            for i,nbr in enumerate(['nbr_house','nbr_apartm','nbr_industry']):
+            N_all=calculate_N(P_scale,dwellings)
+            for i,N in enumerate(N_all):
                 typ=i
-                #Add check for if not all categories are defined by user
-                if not ( values['SEASON']and values['ZONE'] and values['DAY']):
-                    sg.popup('Not all user input defined')
-                else:
-                    try:
-                        N=int(values[nbr])
-                        P_tot.append(aggregate(typ,elomr,arstid,dag,N))
-                    except ValueError:
-                        sg.popup('Please enter integer nbr of objects')
-                        break
-            P_tot=P_tot[0]+P_tot[1]+P_tot[2]
-            # P_tot=pd.DataFrame(P_tot).sum()
+                P_tot.append(aggregate(typ,elomr,arstid,dag,N))
+            P_tot=(P_tot[0]+P_tot[1]+P_tot[2])/1000
             fig,ax=plt.subplots(1,figsize=[8,4])
             P_tot.plot(ax=ax)
             ax.set_xlabel('Hour')
-            ax.set_ylabel('Total consumption (kW)')
+            ax.set_ylabel('Total consumption (MW)')
             dwellings=['Småhus','Lägenhet','Industri']
             ax.set_title('Aggregated load')
             if n==0:
