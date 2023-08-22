@@ -13,7 +13,7 @@ import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 # Import data for SE4
-df=pd.read_csv(r'C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/SVK-Data/all_years.csv',sep=',').iloc[:,1:]
+df=pd.read_csv(r'./SVK-Data/all_years.csv',sep=',').iloc[:,1:]
 
 # Aggregate based on defined time = hour and cat = generation category
 def aggregate(df,time,cat,scale):
@@ -61,7 +61,7 @@ layout = [[sg.Text('Time Series Generator',font=('Helvetica',30))],
           [sg.Text('Choose day:')],
           [sg.Combo(['Weekday','Weekend'],key='DAY',enable_events=True,default_value='Weekday')],
           [sg.Text('CSV Name', size=(12, 1)), sg.Input(key='Name')],
-          [sg.Text('CSV Location', size=(12, 1)), sg.Input('C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/Generated_csv',key='loc'), sg.FolderBrowse()],
+          [sg.Text('CSV Location', size=(12, 1)), sg.Input('./Generated_csv',key='loc'), sg.FolderBrowse()],
           [sg.Submit('Only Generate Timeseries'),sg.Submit('Generate and Save as CSV'),sg.Exit()]
           ]
 
