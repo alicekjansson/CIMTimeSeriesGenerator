@@ -7,7 +7,7 @@ Created on Wed Jul  5 09:29:40 2023
 
 import pandas as pd
 import matplotlib.pyplot as plt
-from alice_func import aggregate
+from alice_func import aggregate, calculate_N
 import PySimpleGUI as sg
 
 # Check themes
@@ -67,10 +67,11 @@ bids=['SE1','SE2','SE3','SE4']
 seasons=['Winter','Autumn/Spring','Summer']
 days=['Weekday','Weekend']
 
+P_scale=5   #Define load level
+
 
 # Run GUI
 while True:
-    P_scale=200   #NEED TO SCALE
     event, values = window.read()
     # End program if user closes window
     if event == "Exit" or event == sg.WIN_CLOSED:
@@ -101,9 +102,9 @@ while True:
     for n,gen in enumerate(['Only Generate Timeseries','Generate and Save as CSV']):
         if event == gen:
             P_tot=[]
-            for i,nbr in enumerate(dwellings):
+            N_all=calculate_N(P_scale,dwellings)
+            for i,N in enumerate(N_all):
                 typ=i
-                N=int(nbr*P_scale)
                 P_tot.append(aggregate(typ,elomr,arstid,dag,N))
             P_tot=(P_tot[0]+P_tot[1]+P_tot[2])/1000
             fig,ax=plt.subplots(1,figsize=[8,4])
@@ -123,7 +124,5 @@ while True:
                     csv_loc=str(loc)+'/'+str(name)+'.csv'
                     P_tot.to_csv(csv_loc)
                     window.close()
-            
-            
 window.close()        
 

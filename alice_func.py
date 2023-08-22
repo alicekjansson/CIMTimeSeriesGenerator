@@ -168,7 +168,9 @@ dwellings4=[0.88,0.02,0.10]
 
 share=dwellings1
 
+#Calculate number of dwellings based on share and scaling power level
 def calculate_N(P_scale,share):
+    P_scale=P_scale*1000    #From MW to kW
     mean=[]
     for typ in [0,1,2]:
         series=generate_timeseries(typ,4,0,0,False)
