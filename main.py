@@ -218,9 +218,7 @@ def start_gui():
                             max_p = round(float(gen['max_p']),2)
                             print('Active Power = '+ str(gen_p) + ' MW')
                             print('Maximum Operating Power = '+ str(max_p)+ ' MW')
-                
-                
-               
+                           
 
          # generate timeseries       
         elif event == 'run':
