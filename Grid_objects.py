@@ -6,6 +6,7 @@ Created on Thu Jun 29 14:30:32 2023
 """
 
 import pandas as pd
+import numpy as np
 
 
 # superclass of all grid objects
@@ -28,14 +29,19 @@ class Loads(GridObjects):
         
         load_p = []
         load_q = []
+        load_cosphi = []
         for load_id in self.df['ID']:   
             for element in self.ssh_list:
                 if '#' + load_id  == element.attrib.get(ns['rdf']+'about'):
                     load_p.append(element.find('cim:EnergyConsumer.p',ns).text)
                     load_q.append(element.find('cim:EnergyConsumer.q',ns).text)
+                    p = float(element.find('cim:EnergyConsumer.p',ns).text)
+                    q = float(element.find('cim:EnergyConsumer.q',ns).text)
+                    load_cosphi.append(np.cos(np.arctan(q/p)))
+                    
         self.df['p']=load_p
         self.df['q']=load_q
-        
+        self.df['cosphi']=load_cosphi
         
 class Generators(GridObjects):
     

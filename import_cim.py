@@ -32,14 +32,14 @@ def data_extract(eq, ssh, ns):
     # if Hydro in data create Hydro class and extract required data  
     element_type = 'HydroGeneratingUnit'
     if eq.findall('cim:'+element_type,ns):
-        gen_type = 'HYDRO'
+        gen_type = 'Hydro'
         hydro_gens = Generators(eq, ssh, ns, element_type, gen_type)
     else:
         hydro_gens = False
     # if Wind in data create Wind class and extract required data  
     element_type = 'WindGeneratingUnit'
     if eq.findall('cim:'+element_type,ns):
-        gen_type = 'WIND POWER'
+        gen_type = 'Wind'
         wind_gens = Generators(eq, ssh, ns, element_type, gen_type)
     else:
         wind_gens = False
@@ -53,7 +53,7 @@ def data_extract(eq, ssh, ns):
     # if Nuclear in data create Nuclear class and extract required data  
     element_type = 'NuclearGeneratingUnit'
     if eq.findall('cim:'+element_type,ns):
-        gen_type = 'NUCLEAR'
+        gen_type = 'Nuclear'
         nuclear_gens = Generators(eq, ssh, ns, element_type, gen_type)
     else:
         nuclear_gens = False
