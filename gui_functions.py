@@ -12,7 +12,9 @@ import xml.etree.ElementTree as ET
 from import_cim import data_extract
 from xml_functions import register_all_namespaces, write_output
 from modify_xml import cim_timeseries
-from profiles import aggregate_gen, aggregate_load, calculate_N
+from profiles import aggregate_gen, aggregate_load, calculate_N, fig_maker, draw_figure, delete_fig_agg
+from matplotlib.figure import Figure
+
 
 
 ns_dict = {'cim':'http://iec.ch/TC57/2013/CIM-schema-cim16#',
@@ -127,7 +129,9 @@ def resource_data_window(loads, gens, gen_texts):
     print_window = sg.MLine(size=(50,10), key='print')
     print = print_window.print
     layout2 = [  [sg.Text('Details')],
-            [print_window]]
+            [print_window],
+            [sg.Text('Time Series')],
+            [sg.Canvas(key='PLOT',background_color='white', size=(360,200))]]
     
     layout = [[sg.Column(layout1),sg.Column(layout2)],
               [sg.Exit()]
@@ -135,7 +139,7 @@ def resource_data_window(loads, gens, gen_texts):
     
     window2 = sg.Window("Resource data viewer", layout, finalize=True)
     
-              
+    
     return window2, print
 
 
@@ -145,6 +149,8 @@ def start_window(gen_texts):
     
     load_no = [sg.Text("-", key='loads'),sg.Text("Loads")]
     gen_no = []
+    
+    
     
     
     for i in range(len(gen_texts)):
@@ -175,10 +181,10 @@ def start_window(gen_texts):
                sg.Exit()],
               [sg.HorizontalSeparator()],
               [sg.Text('Save new CIM (EQ) file as', size=(19, 1)), sg.Input('output_EQ',key='Name',size=(40, 1))],
-              [sg.Text('Output folder', size=(19, 1)), sg.Input(key='loc',size=(40, 1)), sg.FolderBrowse()],        
+              [sg.Text('Output folder', size=(19, 1)), sg.Input('./',key='loc',size=(40, 1)), sg.FolderBrowse()],        
               [sg.HorizontalSeparator()],
               [sg.Text('CSV Name', size=(12, 1)), sg.Input(key='Name1')],
-              [sg.Text('CSV Location', size=(12, 1)), sg.Input(key='loc1'), sg.FolderBrowse()]            
+              [sg.Text('CSV Location', size=(12, 1)), sg.Input('./Generated_csv',key='loc1'), sg.FolderBrowse()]            
               ]
     
     return sg.Window('CIM Timeseries Generator', layout, finalize=True)
@@ -189,6 +195,7 @@ def start_gui():
     timeseries_check = 0 # to check that timeseries have been generated
     load_char = []
     selection = None
+    fig_agg = None
     
     gen_texts = ['PV plants', 'Hydro plants', 'Wind plants', 'Thermal/CHP plants', 'Nuclear plants', 'Undefined power plants']
     
@@ -262,12 +269,13 @@ def start_gui():
             
          # generate timeseries       
         elif event == 'run':
-            
+            all_timeseries=pd.DataFrame()
             if extract_check == 1:
-                                                      
+                timeseries_check=1                                      
                 #TIMESERIES DATA
                 timesteps = 24
                 tstep_length = 3600 # unit seconds
+                
                 
                 #Load data
                 if loads:
@@ -292,6 +300,7 @@ def start_gui():
                             P_tot.append(aggregate_load(cat,zone,season,day,N))
                         P_tot=(P_tot[0]+P_tot[1]+P_tot[2])/1000
                         load_list.append(P_tot)
+                        all_timeseries[load]=P_tot
                         load_q_list.append(P_tot*np.tan(np.arccos(loads.df.at[n, 'cosphi'])))
                         
                     load_array = np.array(load_list)
@@ -309,8 +318,14 @@ def start_gui():
                         gen_list = []
                         for n, gen in enumerate(gen_type.df['name']):
                             P_scale = float(gen_type.df.at[n,'max_p'])
-                            gen_profile=aggregate_gen(gen_ts,'Hour',gen_type.gen_type+' '+'SE'+str(zone),P_scale)
+                            # Nuclear power data only exist in SE3
+                            if gen_type.gen_type == 'Nuclear':
+                                nuclear_zone=3
+                                gen_profile=aggregate_gen(gen_ts,'Hour',gen_type.gen_type+' '+'SE'+str(nuclear_zone),P_scale)
+                            else:
+                                gen_profile=aggregate_gen(gen_ts,'Hour',gen_type.gen_type+' '+'SE'+str(zone),P_scale)
                             gen_list.append(gen_profile)
+                            all_timeseries[gen]=gen_profile
                         gen_array = np.array(gen_list)
                         gen_array.shape = (gen_array.size//len(gen_type.df['name']),len(gen_type.df['name']))
                         gen_type.ts_p = gen_array
@@ -455,6 +470,11 @@ def start_gui():
                         print('Active Power = '+ str(load_p) + ' MW')
                         pf = round(load['cosphi'],2)
                         print('Power Factor = '+ str(pf))
+                        if timeseries_check==1:
+                            if fig_agg is not None:
+                                delete_fig_agg(fig_agg)
+                            fig = fig_maker(all_timeseries[item],item)
+                            fig_agg = draw_figure(window['PLOT'].TKCanvas, fig)
                         
         elif event == '0pv' or  event == '1hy' or event == '2wp' or event == '3chp' or event == '4nucl':
             selection = values[event]
@@ -470,7 +490,12 @@ def start_gui():
                             max_p = round(float(gen['max_p']),2)
                             print('Active Power = '+ str(gen_p) + ' MW')
                             print('Maximum Operating Power = '+ str(max_p)+ ' MW')
-                            
+                            if timeseries_check==1:
+                                if fig_agg is not None:
+                                    delete_fig_agg(fig_agg)
+                                fig = fig_maker(all_timeseries[item],item)
+                                fig_agg = draw_figure(window['PLOT'].TKCanvas, fig)
+
                 # #undefined generators
                 if gens[-1]:
                     for index, gen in gens[-1].df.iterrows():
@@ -479,7 +504,13 @@ def start_gui():
                             max_p = round(float(gen['max_p']),2)
                             print('Active Power = '+ str(gen_p) + ' MW')
                             print('Maximum Operating Power = '+ str(max_p)+ ' MW')
+                            if timeseries_check==1:
+                                if fig_agg is not None:
+                                    delete_fig_agg(fig_agg)
+                                fig = fig_maker(all_timeseries[item],item)
+                                fig_agg = draw_figure(window['PLOT'].TKCanvas, fig)
                            
 
-            
+    if fig_agg is not None:
+        delete_fig_agg(fig_agg)        
     window.close()

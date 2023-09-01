@@ -11,6 +11,7 @@ import PySimpleGUI as sg
 import numpy as np
 from scipy.stats import norm
 import warnings
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
@@ -26,7 +27,7 @@ def aggregate_gen(df,time,cat,scale):
     yearly_profile[str(cat) +' Upper'] = yearly_profile[cat]+yearstd
     yearly_profile[str(cat) +' Lower'] = yearly_profile[cat]-yearstd
     yearly_profile[str(cat) +' Selected'] = yearly_profile[cat]+variation
-    return yearly_profile
+    return [el*scaling for el in year[cat]]
 
 
 #Medelårsförbrukning kWh
@@ -195,3 +196,25 @@ def calculate_N(P_scale,share):
     x = np.linalg.solve(a, b)
     x= [round(el) for el in x]
     return x
+    
+def fig_maker(curve,name):
+    plt.clf()
+    plt.close()
+    plt.figure(figsize=(5,4))
+    plt.plot(curve)    
+    plt.xlabel('Power (MW)')
+    plt.ylabel('Hour')  
+    plt.title(name)
+    plt.xticks(rotation=90)
+    return plt.gcf() 
+
+    
+def draw_figure(canvas, figure, loc=(0, 0)):
+    figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
+    figure_canvas_agg.draw()
+    figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
+    return figure_canvas_agg
+
+def delete_fig_agg(fig_agg):
+    fig_agg.get_tk_widget().forget()
+    plt.close('all')

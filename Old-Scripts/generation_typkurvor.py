@@ -13,7 +13,7 @@ import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 # Import data for SE4
-df=pd.read_csv(r'./SVK-Data/all_years.csv',sep=',').iloc[:,1:]
+df=pd.read_csv(r'C:/Users/Alice/OneDrive - Lund University/Dokument/GitHub/CIMProject/SVK-Data/all_years.csv',sep=',').iloc[:,1:]
 
 # Aggregate based on defined time = hour and cat = generation category
 def aggregate(df,time,cat,scale):
