@@ -12,5 +12,8 @@ The program is run by the script __Main.py__.
 
 The GUI is implemented in the Python package PySimpleGUI. The code building the GUI is in the script __gui_functions.py__.
 
+The generated load profiles are based on the publication "Belastningsberäkning med typkurvor" 
+published by Svenska Elverksföreningen (now Energiföretagen) in 1991.
+
 
 

@@ -5,6 +5,8 @@ Created on Thu Jun 29 14:35:49 2023
 @author: ielmartin
 """
 
+#This is the main script which runs the program
+
 import pandas as pd
 import numpy as np
 import PySimpleGUI as sg
