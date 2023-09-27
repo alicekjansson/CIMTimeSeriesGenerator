@@ -8,7 +8,9 @@ The goal of the project was to create a program which could:
 - Let the user define which elements should be given time series, and how the time series are created
 - Update the CIM file with the generated time series
 
-The program is run by the script __Main.py__
+The program is run by the script __Main.py__. 
+
+The GUI is implemented in the Python package PySimpleGUI. The code building the GUI is in the script __gui_functions.py__.
 
 
 
