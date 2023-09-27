@@ -2,7 +2,9 @@
 """
 Created on Mon Jun 19 08:34:52 2023
 
-@author: ielmartin
+MIT License
+
+Copyright (c) 2023 Alice Jansson, Martin Lundberg
 """
 
 import pandas as pd
