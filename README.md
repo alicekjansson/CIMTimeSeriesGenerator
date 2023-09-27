@@ -1,5 +1,7 @@
 # CIMProject
 
+This code is written by Alice Jansson and Martin Lundberg at Div. Industrial Electrical Engineering and Automation, LTH, within the course FEN3251 Computer Applications in Power Systems in 2023. 
+
 ### Efter möte med Lars:
 - Läs in CIM-fil och hitta de laster och generatorer där användaren skulle kunna vilja definiera tidsserier
 - Använd enkel GUI som verktyg för programmet
