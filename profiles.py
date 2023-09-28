@@ -30,7 +30,7 @@ def aggregate_gen(df,time,cat,scale):
     return [el*scaling for el in year[cat]]
 
 
-#Medelårsförbrukning kWh
+#Calculate average yearly energy kWh
 def forb():
     smahus=np.mean([6311,24166,20247,23456,23994,35254,18859,23927,30699,21951,22016,44637,21217])
     flerbostad=np.mean([187226,144237])
@@ -38,7 +38,7 @@ def forb():
     medelforb=[smahus,flerbostad,industri,smahus]
     return medelforb
 
-# Temperaturberoende
+# Calculate average temperature dependencies
 def tempberoende():
     smahus=np.mean([0.668,0.758,0.713,0.620,0.726,0.675,0.346,0.614,0.790,0.333,0.728,0.525])
     flerbostad=0.08*0.645 #Only 8% of apartment buildings heated with electricity
@@ -163,7 +163,7 @@ def generate_timeseries(typ,elomr,arstid,dag,plot):
     P=transform_load(load_curve,load_temps,Pav,temp,plot)
     return P
 
-
+# Aggregate load profiles to reach correct power levels
 def aggregate_load(typ,elomr,arstid,dag,N):
     #Sammanlagringsfaktor
     S=[0.81,0.6,0.76,0.59]
