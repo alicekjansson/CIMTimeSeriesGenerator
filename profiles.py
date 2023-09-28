@@ -135,9 +135,9 @@ def transform_load(load_curve,load_temps,Pav,temp,plot):
     return P
 
 def generate_timeseries(typ,elomr,arstid,dag,plot):
-    #Medelårsförbrukning kWh
+    #Average yearly energy kWh
     medelforb=forb()
-    # Temperaturberoende
+    # Temperature dependency
     psi=tempberoende()
     # Graddagar, SE1-SE4
     graddag=graddagar()
