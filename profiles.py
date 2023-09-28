@@ -5,6 +5,8 @@ Created on Fri Aug 25 16:07:07 2023
 @author: Alice
 """
 
+# This script contains functions to calculate load and generation profiles
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import PySimpleGUI as sg
@@ -14,6 +16,7 @@ import warnings
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
+#%% Generation
 
 # Aggregate based on defined time = hour and cat = generation category
 def aggregate_gen(df,time,cat,scale):
@@ -29,6 +32,7 @@ def aggregate_gen(df,time,cat,scale):
     yearly_profile[str(cat) +' Selected'] = yearly_profile[cat]+variation
     return [el*scaling for el in year[cat]]
 
+#%% Load
 
 #Calculate average yearly energy kWh
 def forb():
@@ -163,6 +167,20 @@ def generate_timeseries(typ,elomr,arstid,dag,plot):
     P=transform_load(load_curve,load_temps,Pav,temp,plot)
     return P
 
+#Calculate number of dwellings based on share and scaling power level
+def calculate_N(P_scale,share):
+    P_scale=P_scale*1000    #From MW to kW
+    mean=[]
+    for typ in [0,1,2]:
+        series=generate_timeseries(typ,4,0,0,False)
+        mean.append(series.mean().iloc[0])
+    #Solve equation system
+    a = np.array([[mean[0], mean[1],mean[2]], [1-share[0], -share[0],-share[0]],[-share[1],1-share[1],-share[1]]])
+    b = np.array([P_scale, 0,0])
+    x = np.linalg.solve(a, b)
+    x= [round(el) for el in x]
+    return x
+
 # Aggregate load profiles to reach correct power levels
 def aggregate_load(typ,elomr,arstid,dag,N):
     #Sammanlagringsfaktor
@@ -183,21 +201,9 @@ def aggregate_load(typ,elomr,arstid,dag,N):
         Ptot=Ptot+Ptot2         #Add load from both house types
     return Ptot
 
-
-#Calculate number of dwellings based on share and scaling power level
-def calculate_N(P_scale,share):
-    P_scale=P_scale*1000    #From MW to kW
-    mean=[]
-    for typ in [0,1,2]:
-        series=generate_timeseries(typ,4,0,0,False)
-        mean.append(series.mean().iloc[0])
-    #Solve equation system
-    a = np.array([[mean[0], mean[1],mean[2]], [1-share[0], -share[0],-share[0]],[-share[1],1-share[1],-share[1]]])
-    b = np.array([P_scale, 0,0])
-    x = np.linalg.solve(a, b)
-    x= [round(el) for el in x]
-    return x
-    
+ 
+#%% Plotting
+   
 def fig_maker(curve,name):
     plt.clf()
     plt.close()
