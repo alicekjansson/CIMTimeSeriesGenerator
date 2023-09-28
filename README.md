@@ -76,7 +76,23 @@ Note that the use of the NonConformLoad class instead of ConformLoad would not m
 
 ### Generation of profiles
 
-The generated load profiles are based on the publication "Belastningsberäkning med typkurvor" published by Svenska Elverksföreningen (now Energiföretagen) in 1991.
+The functions for the generation of profiles are found in the script __profiles.py__. 
+
+#### Loads
+
+The generated load profiles are based on the publication "Belastningsberäkning med typkurvor" published by Svenska Elverksföreningen (now Energiföretagen) in 1991. Four standard load curves are used: 
+- House with heating from electricity
+- House with heating from other source
+- Apartment building with heating from other source
+- Small Industry with heating from electricity
+
+For houses, a combination of 30 % houses with electric heating and 70 % without electric heating is used based on Swedish statistics. 
+
+The code for calculating load profiles is found in the function _generate_timeseries_. A load profile is based on a standard load curve (defined above), transformed according to yearly energy use and temperature as defined in the report from 1991. Aggregation of load profiles to correct power level is done with the function _aggregate_load_. The number of objects is calculated based on defined power level of load.
+
+#### Generation
+
+The generation profiles are based on aggregated data per bidding area from SVK. Generation profiles are scaled with defined power level in the function _aggregate_gen_. Some code is available for adding a random factor to the generation, but not implemented in the original code.
 
 ### GUI (gui_functions.py)
 
