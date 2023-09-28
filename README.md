@@ -9,9 +9,6 @@ The goal of the project was to create a program which could:
 - Update the CIM file with the generated time series
 
 
-The generated load profiles are based on the publication "Belastningsberäkning med typkurvor" 
-published by Svenska Elverksföreningen (now Energiföretagen) in 1991.
-
 The code is free to use, modify and distribute without restrictions according to the MIT license, see __license.txt__
 
 
@@ -76,6 +73,10 @@ Note that the use of the NonConformLoad class instead of ConformLoad would not m
 
 #### Scheduled Generation
 #### Nonscheduled Generation
+
+### Generation of profiles
+
+The generated load profiles are based on the publication "Belastningsberäkning med typkurvor" published by Svenska Elverksföreningen (now Energiföretagen) in 1991.
 
 ### GUI (gui_functions.py)
 
