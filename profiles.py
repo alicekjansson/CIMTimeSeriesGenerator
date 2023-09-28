@@ -134,6 +134,7 @@ def transform_load(load_curve,load_temps,Pav,temp,plot):
         plt.legend()
     return P
 
+# Calculate one load profile
 def generate_timeseries(typ,elomr,arstid,dag,plot):
     #Average yearly energy kWh
     medelforb=forb()
