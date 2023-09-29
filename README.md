@@ -42,7 +42,7 @@ The power system resource classes considered by the timeseries generator are
 - ThermalGeneratingUnit
 - NuclearGeneratingUnit
   
-(<ins>Note:</ins> additional resource classes exist, perhaps most notably SolarGeneratingUnit which represents a solar thermal plant)
+(<ins>Note:</ins> additional resource classes exist, such as PowerElectronicsWindUnit, and SolarGeneratingUnit which represents a solar thermal plant)
 
 Resource data is collected from the EQ and SSH files and stored by type in instances of the GridObjects classes _Loads_ and _Generators_. _Loads_ is used to collect all instances of the EnergyConsumer class found in the CIM files and _Generators_ is used to group all other classes listed above by generator type. 
 
@@ -58,7 +58,7 @@ Three different approaches are used to represent timeseries for loads, conventio
 
 #### Loads
 
-All considered loads changes class from EnergyConsumer to the specialized class ConformLoad with all attributes inherited. ConformLoad "represent loads that follow a daily load change pattern where the pattern can be used to scale the load with a system load" (IEC 61970-301:2020). 
+All considered loads change class from EnergyConsumer to the specialized class ConformLoad with all attributes inherited. ConformLoad "represent loads that follow a daily load change pattern where the pattern can be used to scale the load with a system load" (IEC 61970-301:2020). 
 
 For each ConformLoad instance, one ConformLoadGroup and one ConformLoadSchedule instance is generated and associated to the ConformLoad in question. ConformLoadSchedule contains details for a curve with active and reactive power values over a given period of time. The attributes added to each ConformLoadSchedule instance in the code are
 
@@ -95,6 +95,20 @@ Timepoints are stored as instances of the RegularTimePoint class which is a cons
 <ins>Note:</ins> IDs of new class instances follow same logic as for loads 
 
 #### Nonscheduled Generation
+
+For generators of type PhotoVoltaicUnit, WindGeneratingUnit, and instances of GeneratingUnit chosen to be modelled as one of the two former classes, instances of the Analog measurement class are generated. The attributes added to each Analog instance in the code are
+
+- ID, name, PowerSystemResource, description, unitMultiplier, unitSymbol, phases, measurementType
+
+Timepoints are stored using the AnalogValue class. The attributes added to each AnalogValue instance in the code are
+
+- ID, name, description, Analog, value
+  
+<ins>Note:</ins>  In the Analog class, PowerSysemResource represent the assiociated generator, the timestep is written out in description as "timeStep=3600", unitMultiplier = M, unitSymbol = W, phases = ABC, measurementType = ThreePhaseActivePower
+
+<ins>Note:</ins>  In the AnalogValue class, the timepoint sequence number is written out in description as "sequenceNumber X", Analog is the associated analog measurement series. 
+
+<ins>Note:</ins> Using Measurement class type instance to store timeseries in case is not ideal. Timeseries for WindGeneratingUnit can instead be stored using GenUnitOpSchedule. This is also true for SolarGeneratingUnit, but not for PhotoVoltaicUnit and PowerElectronicsWindUnit that are both specialized versions of the PowerElectronicsUnit class (that can also include batteries)
 
 ### Generation of profiles
 
