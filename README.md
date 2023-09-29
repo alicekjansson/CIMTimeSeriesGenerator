@@ -64,17 +64,17 @@ For each ConformLoad instance, one ConformLoadGroup and one ConformLoadSchedule 
 
 - ID, name, ConformLoadGroup, value1Unit, value2Unit, timeStep
 
-Timepoints are stored as instances of the RegularTimePoint class which is a consequence of the ConformLoadSchedule inherits attributes from the RegularIntervalSchedule class. For each RegulatTimePoint instance the following attributes are added
+Timepoints are stored as instances of the RegularTimePoint class which is a consequence of the ConformLoadSchedule inherits attributes from the RegularIntervalSchedule class. For each RegularTimePoint instance the following attributes are added
 
 - ID, IntervalSchedule, sequenceNumber, value1, value2
 
-<ins>Note:</ins>  when generating ConformLoadSchedule here, the units are given as [W] and [var] despite actually being [MW] and [Mvar]. This is the same implementation as in the ENSTO-E Test Configuration.
+<ins>Note1:</ins>  when generating ConformLoadSchedule here, the units are given as [W] and [var] despite actually being [MW] and [Mvar]. This is the same implementation as in the ENSTO-E Test Configuration.
 
-<ins>Note:</ins> For ConformLoadSchedule, timeStep = 3600 for all generated timeseries in the code (hourly values, unit is seconds). No DateTime type attibutes are added. 
+<ins>Note2:</ins> For ConformLoadSchedule, timeStep = 3600 for all generated timeseries in the code (hourly values, unit is seconds). No DateTime type attibutes are added. 
 
-<ins>Note:</ins>  all IDs of new class instances are completely made-up, but in an incremental fashion, e.g., "_load_grp_no2_schedule_tp_id3" is the ID for the fourth timepoint (starting from 0) of the only load schedule instance for LoadGroup instance number 2. The exception is ConformLoad which inherits the ID from EnergyConsumer.  
+<ins>Note3:</ins>  all IDs of new class instances are completely made-up, but in an incremental fashion, e.g., "_load_grp_no2_schedule_tp_id3" is the ID for the fourth timepoint (starting from 0) of the only load schedule instance for LoadGroup instance number 2. The exception is ConformLoad which inherits the ID from EnergyConsumer.  
 
-<ins>Note:</ins> Using NonConformLoad and associated grouping and scheduling classes would not make any difference in this particular case since one timeseries dataset is assigned to each load rather than having multiple loads being grouped and scaled to one and the same timeseries. 
+<ins>Note4:</ins> Using NonConformLoad and associated grouping and scheduling classes would not make any difference in this particular case since one timeseries dataset is assigned to each load rather than having multiple loads being grouped and scaled to one and the same timeseries. 
 
 #### Scheduled Generation
 
@@ -86,13 +86,13 @@ Timepoints are stored as instances of the RegularTimePoint class which is a cons
 
 - ID, IntervalSchedule, sequenceNumber, value1, value2
 
- <ins>Note:</ins>  when generating GenUnitOpSchedule here, the units are given as [none] (for the operational status) and [W] despite the latter actually being [MW]. This is the same implementation as in the ENSTO-E Test Configuration. 
+ <ins>Note5:</ins>  when generating GenUnitOpSchedule here, the units are given as [none] (for the operational status) and [W] despite the latter actually being [MW]. This is the same implementation as in the ENSTO-E Test Configuration. 
 
-<ins>Note:</ins>  value1 = 3 for all RegulatTimePoint instances, meaning the active power injections of the generators are assumed to be determined by value2
+<ins>Note6:</ins>  value1 = 3 for all RegulatTimePoint instances, meaning the active power injections of the generators are assumed to be determined by value2
 
-<ins>Note:</ins> timeStep setting follow same logic as for loads 
+<ins>Note7:</ins> timeStep setting follow same logic as for loads 
 
-<ins>Note:</ins> IDs of new class instances follow same logic as for loads 
+<ins>Note8:</ins> IDs of new class instances follow same logic as for loads 
 
 #### Nonscheduled Generation
 
@@ -104,11 +104,11 @@ Timepoints are stored using the AnalogValue class. The attributes added to each 
 
 - ID, name, description, Analog, value
   
-<ins>Note:</ins>  In the Analog class, PowerSysemResource represent the assiociated generator, the timestep is written out in description as "timeStep=3600", unitMultiplier = M, unitSymbol = W, phases = ABC, measurementType = ThreePhaseActivePower
+<ins>Note9:</ins>  In the Analog class, PowerSysemResource represent the assiociated generator, the timestep is written out in description as "timeStep=3600", unitMultiplier = M, unitSymbol = W, phases = ABC, measurementType = ThreePhaseActivePower
 
-<ins>Note:</ins>  In the AnalogValue class, the timepoint sequence number is written out in description as "sequenceNumber X", Analog is the associated analog measurement series. 
+<ins>Note10:</ins>  In the AnalogValue class, the timepoint sequence number is written out in description as "sequenceNumber X", Analog is the associated analog measurement series. 
 
-<ins>Note:</ins> Using Measurement class type instance to store timeseries in case is not ideal. Timeseries for WindGeneratingUnit can instead be stored using GenUnitOpSchedule. This is also true for SolarGeneratingUnit, but not for PhotoVoltaicUnit and PowerElectronicsWindUnit that are both specialized versions of the PowerElectronicsUnit class (that can also include batteries)
+<ins>Note11:</ins> Using Measurement class type instance to store timeseries as in this case is not ideal. Timeseries for WindGeneratingUnit can instead be stored using GenUnitOpSchedule. This is also true for SolarGeneratingUnit, but not for PhotoVoltaicUnit and PowerElectronicsWindUnit that are both specialized versions of the PowerElectronicsUnit class (that can also include batteries)
 
 ### Generation of profiles
 
