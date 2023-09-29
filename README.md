@@ -29,7 +29,7 @@ The GUI is initialized by running the script __main.py__.
 
 ## Details
 
-The project is based on the IEC 61970-301:2020 standard. The code was tested using EQ and SSH files from the ENTSO-E Test Configuration networks. 
+The project is based on the IEC 61970-301:2020 standard. The code was tested using EQ and SSH files from the ENTSO-E Test Configuration networks (can be downloaded from https://www.entsoe.eu/data/cim/cim-conformity-and-interoperability/ [2023-09-29]. 
 
 ### Importing EQ and SSH files, and extracting relevant data (import_cim.py, GridObjects.py)
 
