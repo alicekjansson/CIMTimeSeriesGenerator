@@ -205,7 +205,7 @@ def gen_meas(eq, ns, gen_name, gen_id, sch_id, tstep_length):
     meas_name = SubElement(meas, QName(ns['cim'], 'IdentifiedObject.name'))
     meas_name.text = gen_name + '_timeseries'
     meas_descript = SubElement(meas, QName(ns['cim'], 'IdentifiedObject.description'))
-    meas_descript.text = 'sTimestep=' + str(tstep_length) 
+    meas_descript.text = 'timeStep=' + str(tstep_length) 
     
     # Why not Unitmultipliers in MicroGrid example???
     SubElement(meas, QName(ns['cim'], 'Measurement.unitMultiplier'), {QName(ns['rdf'], 'resource'): 'http://iec.ch/TC57/2013/CIM-schema-cim16#UnitMultiplier.M'})
