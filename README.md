@@ -130,9 +130,14 @@ The code for calculating load profiles is found in the function _generate_timese
 
 The generation profiles are based on aggregated data per bidding area from SVK. Generation profiles are scaled with defined power level in the function _aggregate_gen_. Some code is available for adding a random factor to the generation, but not implemented in the original code.
 
+### Output CIM file (xml_functions.py)
+
+Currently, the parsed input EQ file is updated with all new class instances. This makes for a large output xml file if long timeseries and many resources are to be considered. This can be addressed by (at least) moving the all time point data for a single timestep to a separate SSH file. In order to do so __xml_functions.py__ can be updated so that the timepoint data is generated for all resources together for each timestep first after all scheduling class instances have been created. A new xml file should then be generated for each timepoint iteration step.    
+
+
 ### GUI (gui_functions.py)
 
 The code building the GUI is in the script __gui_functions.py__.
-
+It contains code for all windows as well as for generating output XML and CSV files.
 
 
