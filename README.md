@@ -23,7 +23,7 @@ The code is free to use, modify and distribute without restrictions according to
 
  ## Running the Program 
 
-Requirements: Python with PySimpleGUI
+Requirements: Python with the ElementTree and PySimpleGUI packages installed (+Pandas, Numpy)
 
 The GUI is initialized by running the script __main.py__. 
 
