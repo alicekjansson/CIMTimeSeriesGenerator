@@ -108,7 +108,7 @@ Timepoints are stored using the AnalogValue class. The attributes added to each 
 
 <ins>Note10:</ins>  In the AnalogValue class, the timepoint sequence number is written out in description as "sequenceNumber X", Analog is the associated analog measurement series. 
 
-<ins>Note11:</ins> Using Measurement class type instance to store timeseries as in this case is not ideal. Timeseries for WindGeneratingUnit can instead be stored using GenUnitOpSchedule. This is also true for SolarGeneratingUnit, but not for PhotoVoltaicUnit and PowerElectronicsWindUnit that are both specialized versions of the PowerElectronicsUnit class (that can also include batteries)
+<ins>Note11:</ins> Using Measurement class type instances to store timeseries as in this case is not an ideal approach. Timeseries for WindGeneratingUnit can instead be stored using GenUnitOpSchedule. This is also true for SolarGeneratingUnit, but not for PhotoVoltaicUnit and PowerElectronicsWindUnit that are both specialized versions of the PowerElectronicsUnit class (that can also include batteries)
 
 ### Generation of profiles
 
