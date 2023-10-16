@@ -2,7 +2,9 @@
 """
 Created on Tue Jul  4 09:19:37 2023
 
-@author: ielmartin
+MIT License
+
+Copyright (c) 2023 Alice Jansson, Martin Lundberg
 """
 
 import xml.etree.ElementTree as ET

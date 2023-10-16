@@ -10,6 +10,16 @@ Copyright (c) 2023 Alice Jansson, Martin Lundberg
 import pandas as pd
 from Grid_objects import GridObjects, Loads, Generators
 
+
+#Extract data from CIM files and add to load and generator class instances
+ 
+ # NOTE: the following relevant points are not considered in the data extraction process but could potentially be included 
+ # Slack generator
+ # External grid(s)    
+ # EnergySource (CIM class)
+ # ConformLoad and NonConformLoad (CIM classes)
+ # Solar thermal units (SolarGeneratingUnit CIM class)
+
  
 def data_extract(eq, ssh, ns):           
     # create load class and extract required data     
@@ -20,11 +30,8 @@ def data_extract(eq, ssh, ns):
     else:
         loads = False
     
-    # conform loads = loads/load grouos scale from one common profile. See full grid model
-    # nonconform loads = individual profiles for each load/load group. See full grid model
-    
-    
-    # if PVs in data create PV class and extract required data NOTE: solar thermal units (SolarGeneratingUnit CIM class) are not represented in this version 
+     
+    # if PVs in data create PV class and extract required data
     element_type = 'PhotoVoltaicUnit'
     if eq.findall('cim:'+element_type,ns):
         gen_type = 'PV'
@@ -66,10 +73,7 @@ def data_extract(eq, ssh, ns):
         undef_gens = Generators(eq, ssh, ns, element_type, gen_type)
     else:
         undef_gens = False
-        
-    # Manage slack gen?
-    # External grids?    
-    # INCLUDE ALSO EnergySource? only voltage angle?
+    
     
     return loads, pv_gens, hydro_gens, wind_gens, thermal_gens, nuclear_gens, undef_gens
     

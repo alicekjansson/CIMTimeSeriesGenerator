@@ -2,7 +2,9 @@
 """
 Created on Thu Jun 29 14:30:32 2023
 
-@author: ielmartin
+MIT License
+
+Copyright (c) 2023 Alice Jansson, Martin Lundberg
 """
 
 import pandas as pd
@@ -14,6 +16,7 @@ class GridObjects:
     
     def __init__(self, eq, ssh, ns, element_type):
 
+        # for each resource class instance save basic data such as ID and name of resources
         self.df=pd.DataFrame()
         self.element_type = element_type 
         self.eq_list= eq.findall('cim:'+element_type,ns)
@@ -21,7 +24,7 @@ class GridObjects:
         self.df['ID']=[element.attrib.get(ns['rdf']+'ID') for element in self.eq_list]
         self.df['name']=[element.find('cim:IdentifiedObject.name',ns).text for element in self.eq_list]
         
-        
+# Loads class, extracting all EnergyConsumer instances         
 class Loads(GridObjects):
     
     def __init__(self, eq, ssh, ns, element_type = "EnergyConsumer"):
@@ -30,19 +33,24 @@ class Loads(GridObjects):
         load_p = []
         load_q = []
         load_cosphi = []
+        
+        # for loads store active and reactive power from input SSH file, compute power factor for display in GUI
         for load_id in self.df['ID']:   
             for element in self.ssh_list:
                 if '#' + load_id  == element.attrib.get(ns['rdf']+'about'):
-                    load_p.append(element.find('cim:EnergyConsumer.p',ns).text)
-                    load_q.append(element.find('cim:EnergyConsumer.q',ns).text)
-                    p = float(element.find('cim:EnergyConsumer.p',ns).text)
-                    q = float(element.find('cim:EnergyConsumer.q',ns).text)
+                    p_val = element.find('cim:EnergyConsumer.p',ns).text
+                    q_val = element.find('cim:EnergyConsumer.q',ns).text
+                    load_p.append(p_val)
+                    load_q.append(q_val)
+                    p = float(p_val)
+                    q = float(q_val)
                     load_cosphi.append(np.cos(np.arctan(q/p)))
                     
         self.df['p']=load_p
         self.df['q']=load_q
         self.df['cosphi']=load_cosphi
-        
+
+# Generators class, extracting all generator instances of types specified in import_cim.py
 class Generators(GridObjects):
     
     def __init__(self,eq,ssh,ns, element_type, gen_type):
@@ -55,6 +63,7 @@ class Generators(GridObjects):
         max_p = []
         min_p = []
         
+        # for generators store active power (initial/nominal/max/min) from input EQ file
         for element in self.eq_list:
             init_p.append(element.find('cim:GeneratingUnit.initialP',ns).text)
             nom_p.append(element.find('cim:GeneratingUnit.nominalP',ns).text)

@@ -2,7 +2,9 @@
 """
 Created on Mon Aug 21 15:51:50 2023
 
-@author: Alice, ielmartin
+MIT License
+
+Copyright (c) 2023 Alice Jansson, Martin Lundberg
 """
 
 import pandas as pd
@@ -191,15 +193,16 @@ def start_window(gen_texts):
 
 # function to generate gui windows and track events
 def start_gui():
+    
+    # initiate variables for tracking and storing data for correct GUI operation
     extract_check = 0 # to check if cim data has been extracted from files
     timeseries_check = 0 # to check that timeseries have been generated
-    load_char = []
+    load_char = [] # for storing load characteristcs data
     selection = None
-    fig_agg = None
-    
+    fig_agg = None   
     gen_texts = ['PV plants', 'Hydro plants', 'Wind plants', 'Thermal/CHP plants', 'Nuclear plants', 'Undefined power plants']
     
-    # start only the first gui when running the code
+    # start only the first (main) window when running the code
     window1, window2, window3 = start_window(gen_texts), None, None
     while True:      
         window, event, values = sg.read_all_windows()
@@ -216,7 +219,7 @@ def start_gui():
         ### --- MAIN WINDOW ---
         # extracting data from CIM file
         elif event == 'extract':
-            # Parse input files
+            # Parse input EQ and SSH files using ElementTree
             eq_file = values[0]
             ssh_file = values[1]
             eq_xml = ET.parse(eq_file)
@@ -224,7 +227,7 @@ def start_gui():
             ssh_xml = ET.parse(ssh_file)
             ssh=ssh_xml.getroot()        
             
-            # Here, load and generator classes are created and populated with data      
+            # Here, load and generator (python) classes are created and populated with data extracted from the parsed CIM files      
             loads, pv_gens, hydro_gens, wind_gens, thermal_gens, nuclear_gens, undef_gens = data_extract(eq, ssh, ns_dict)
             gens = [pv_gens, hydro_gens, wind_gens, thermal_gens, nuclear_gens, undef_gens]
             
@@ -264,7 +267,7 @@ def start_gui():
                 else:
                     window[gen_texts[i]].update('0')
                        
-                         
+            # mark data extract as completed             
             extract_check = 1
             
          # generate timeseries       

@@ -2,7 +2,9 @@
 """
 Created on Mon Jul  3 13:47:46 2023
 
-@author: ielmartin
+MIT License
+
+Copyright (c) 2023 Alice Jansson, Martin Lundberg
 """
 
 # Script to add timeseries data to existing cim file ---TO BE INCLUDED IN MAIN SCRIPT/GUI---
