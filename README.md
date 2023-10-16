@@ -88,7 +88,7 @@ Timepoints are stored as instances of the RegularTimePoint class which is a cons
 
  <ins>Note5:</ins>  when generating GenUnitOpSchedule here, the units are given as [none] (for the operational status) and [W] despite the latter actually being [MW]. This is the same implementation as in the ENSTO-E Test Configuration. 
 
-<ins>Note6:</ins>  value1 = 3 for all RegulatTimePoint instances, meaning the active power injections of the generators are assumed to be determined by value2
+<ins>Note6:</ins>  value1 = 3 for all RegularTimePoint instances, meaning the active power injections of the generators are assumed to be determined by value2
 
 <ins>Note7:</ins> timeStep setting follow same logic as for loads 
 
