@@ -20,7 +20,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 
 # Aggregate based on defined time = hour and cat = generation category
 def aggregate_gen(df,time,cat,scale):
-    year=df.groupby(time).agg('mean')
+    year=df.groupby(time).agg('mean',numeric_only=True)
     yearly_profile=pd.DataFrame()
     original_scale=year[cat].max()
     scaling=scale/original_scale
